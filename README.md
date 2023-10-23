@@ -22,7 +22,7 @@ Tasks
 
 ## What? Sexa-wha?
 
-It is a sixty-year cycle, historically used for recording time in China and the rest of the East Asian cultural sphere. One way to use this JSON file is to determine your Chinese zodiac sign according to your year of birth. [Read more at Wikipedia](https://en.wikipedia.org/wiki/Chinese_zodiac)
+It is a sixty-year cycle, historically used for recording time in China and the rest of the East Asian cultural sphere. One use for this library is to determine your [Chinese zodiac](https://en.wikipedia.org/wiki/Chinese_zodiac) sign according to your year of birth.
 
 ## Where is your data from?
 
@@ -33,13 +33,13 @@ The source contains 2 consecutive Sexagenary Cycles:
 1. 1924 - 1983
 2. 1984 - 2043
 
-The HTML table was copied and saved as a TSV file. From the TSV file, we are able to create a JSON file as a starting point for further refinement.
+The HTML table was copied and saved as a TSV file. From the TSV file, a JSON file was created as a starting point for further refinement.
 
 ## Why copy it to Github?
 
 In its current form, the Wikipedia table is not friendly to programmers.
 
-If you saw this table, determining if your birthdate fell within the date ranges below would not be easy. Also note that the date range is *string*, not a *date* type.
+If you saw this table, determining if your birthdate fell within the date ranges below would not be easy. Also, note that the date range's data type is a *string*, not a *date*.
 
 | Line | Year 1924–1983 | Year 1984–2043 | Associated element | Heavenly stem | Earthly branch | Associated animal |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
@@ -49,6 +49,8 @@ If you saw this table, determining if your birthdate fell within the date ranges
 
 ## Transformation work
 
-My mission here is to *preserve, improve, and publish the improvements as copies*.
+The mission here is to *preserve, improve, and publish the improvements as copies*.
 
-I'm most comfortable in the Swift language, so the transformation work will be done in a Swift Framework.
+With full respect to the original source material, the TSV file will be kept as close as possible to its original form - undergoing edits only in the off-chance that the data values require correction.
+
+Utilizing the JSON of the source, this package will have a method that can generate a new JSON file that contains actual *data* types (as opposed to strings in the original), making lookup of a date's zodiac animal easier.
