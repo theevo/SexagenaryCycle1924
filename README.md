@@ -1,5 +1,7 @@
 # Chinese Sexagenary Cycle
 
+![Unit Tests](https://github.com/theevo/SexagenaryCycle1924/.github/workflows/swift.yml/badge.svg)
+
 ## Purpose
 
 This is a Swift Package that will:
