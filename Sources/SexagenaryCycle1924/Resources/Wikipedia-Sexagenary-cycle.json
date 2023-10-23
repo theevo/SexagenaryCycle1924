@@ -1,0 +1,542 @@
+﻿[
+  {
+    "Line": "1",
+    "Year 1924–1983": "Feb 05 1924–Jan 23 1925",
+    "Year 1984–2043": "Feb 02 1984–Feb 19 1985",
+    "Associated element": "Yang Wood",
+    "Heavenly stem": "甲",
+    "Earthly branch": "子",
+    "Associated animal": "Rat"
+  },
+  {
+    "Line": "2",
+    "Year 1924–1983": "Jan 24 1925–Feb 12 1926",
+    "Year 1984–2043": "Feb 20 1985–Feb 08 1986",
+    "Associated element": "Yin Wood",
+    "Heavenly stem": "乙",
+    "Earthly branch": "丑",
+    "Associated animal": "Ox"
+  },
+  {
+    "Line": "3",
+    "Year 1924–1983": "Feb 13 1926–Feb 01 1927",
+    "Year 1984–2043": "Feb 09 1986–Jan 28 1987",
+    "Associated element": "Yang Fire",
+    "Heavenly stem": "丙",
+    "Earthly branch": "寅",
+    "Associated animal": "Tiger"
+  },
+  {
+    "Line": "4",
+    "Year 1924–1983": "Feb 02 1927–Jan 22 1928",
+    "Year 1984–2043": "Jan 29 1987–Feb 16 1988",
+    "Associated element": "Yin Fire",
+    "Heavenly stem": "丁",
+    "Earthly branch": "卯",
+    "Associated animal": "Rabbit"
+  },
+  {
+    "Line": "5",
+    "Year 1924–1983": "Jan 23 1928–Feb 09 1929",
+    "Year 1984–2043": "Feb 17 1988–Feb 05 1989",
+    "Associated element": "Yang Earth",
+    "Heavenly stem": "戊",
+    "Earthly branch": "辰",
+    "Associated animal": "Dragon"
+  },
+  {
+    "Line": "6",
+    "Year 1924–1983": "Feb 10 1929–Jan 29 1930",
+    "Year 1984–2043": "Feb 06 1989–Jan 26 1990",
+    "Associated element": "Yin Earth",
+    "Heavenly stem": "己",
+    "Earthly branch": "巳",
+    "Associated animal": "Snake"
+  },
+  {
+    "Line": "7",
+    "Year 1924–1983": "Jan 30 1930–Feb 16 1931",
+    "Year 1984–2043": "Jan 27 1990–Feb 14 1991",
+    "Associated element": "Yang Metal",
+    "Heavenly stem": "庚",
+    "Earthly branch": "午",
+    "Associated animal": "Horse"
+  },
+  {
+    "Line": "8",
+    "Year 1924–1983": "Feb 17 1931–Feb 05 1932",
+    "Year 1984–2043": "Feb 15 1991–Feb 03 1992",
+    "Associated element": "Yin Metal",
+    "Heavenly stem": "辛",
+    "Earthly branch": "未",
+    "Associated animal": "Goat"
+  },
+  {
+    "Line": "9",
+    "Year 1924–1983": "Feb 06 1932–Jan 25 1933",
+    "Year 1984–2043": "Feb 04 1992–Jan 22 1993",
+    "Associated element": "Yang Water",
+    "Heavenly stem": "壬",
+    "Earthly branch": "申",
+    "Associated animal": "Monkey"
+  },
+  {
+    "Line": "10",
+    "Year 1924–1983": "Jan 26 1933–Feb 13 1934",
+    "Year 1984–2043": "Jan 23 1993–Feb 09 1994",
+    "Associated element": "Yin Water",
+    "Heavenly stem": "癸",
+    "Earthly branch": "酉",
+    "Associated animal": "Rooster"
+  },
+  {
+    "Line": "11",
+    "Year 1924–1983": "Feb 14 1934–Feb 03 1935",
+    "Year 1984–2043": "Feb 10 1994–Jan 30 1995",
+    "Associated element": "Yang Wood",
+    "Heavenly stem": "甲",
+    "Earthly branch": "戌",
+    "Associated animal": "Dog"
+  },
+  {
+    "Line": "12",
+    "Year 1924–1983": "Feb 04 1935–Jan 23 1936",
+    "Year 1984–2043": "Jan 31 1995–Feb 18 1996",
+    "Associated element": "Yin Wood",
+    "Heavenly stem": "乙",
+    "Earthly branch": "亥",
+    "Associated animal": "Pig"
+  },
+  {
+    "Line": "13",
+    "Year 1924–1983": "Jan 24 1936–Feb 10 1937",
+    "Year 1984–2043": "Feb 19 1996–Feb 06 1997",
+    "Associated element": "Yang Fire",
+    "Heavenly stem": "丙",
+    "Earthly branch": "子",
+    "Associated animal": "Rat"
+  },
+  {
+    "Line": "14",
+    "Year 1924–1983": "Feb 11 1937–Jan 30 1938",
+    "Year 1984–2043": "Feb 07 1997–Jan 27 1998",
+    "Associated element": "Yin Fire",
+    "Heavenly stem": "丁",
+    "Earthly branch": "丑",
+    "Associated animal": "Ox"
+  },
+  {
+    "Line": "15",
+    "Year 1924–1983": "Jan 31 1938–Feb 18 1939",
+    "Year 1984–2043": "Jan 28 1998–Feb 15 1999",
+    "Associated element": "Yang Earth",
+    "Heavenly stem": "戊",
+    "Earthly branch": "寅",
+    "Associated animal": "Tiger"
+  },
+  {
+    "Line": "16",
+    "Year 1924–1983": "Feb 19 1939–Feb 07 1940",
+    "Year 1984–2043": "Feb 16 1999–Feb 04 2000",
+    "Associated element": "Yin Earth",
+    "Heavenly stem": "己",
+    "Earthly branch": "卯",
+    "Associated animal": "Rabbit"
+  },
+  {
+    "Line": "17",
+    "Year 1924–1983": "Feb 08 1940–Jan 26 1941",
+    "Year 1984–2043": "Feb 05 2000–Jan 23 2001",
+    "Associated element": "Yang Metal",
+    "Heavenly stem": "庚",
+    "Earthly branch": "辰",
+    "Associated animal": "Dragon"
+  },
+  {
+    "Line": "18",
+    "Year 1924–1983": "Jan 27 1941–Feb 14 1942",
+    "Year 1984–2043": "Jan 24 2001–Feb 11 2002",
+    "Associated element": "Yin Metal",
+    "Heavenly stem": "辛",
+    "Earthly branch": "巳",
+    "Associated animal": "Snake"
+  },
+  {
+    "Line": "19",
+    "Year 1924–1983": "Feb 15 1942–Feb 04 1943",
+    "Year 1984–2043": "Feb 12 2002–Jan 31 2003",
+    "Associated element": "Yang Water",
+    "Heavenly stem": "壬",
+    "Earthly branch": "午",
+    "Associated animal": "Horse"
+  },
+  {
+    "Line": "20",
+    "Year 1924–1983": "Feb 05 1943–Jan 24 1944",
+    "Year 1984–2043": "Feb 01 2003–Jan 21 2004",
+    "Associated element": "Yin Water",
+    "Heavenly stem": "癸",
+    "Earthly branch": "未",
+    "Associated animal": "Goat"
+  },
+  {
+    "Line": "21",
+    "Year 1924–1983": "Jan 25 1944–Feb 12 1945",
+    "Year 1984–2043": "Jan 22 2004–Feb 08 2005",
+    "Associated element": "Yang Wood",
+    "Heavenly stem": "甲",
+    "Earthly branch": "申",
+    "Associated animal": "Monkey"
+  },
+  {
+    "Line": "22",
+    "Year 1924–1983": "Feb 13 1945–Feb 01 1946",
+    "Year 1984–2043": "Feb 09 2005–Jan 28 2006",
+    "Associated element": "Yin Wood",
+    "Heavenly stem": "乙",
+    "Earthly branch": "酉",
+    "Associated animal": "Rooster"
+  },
+  {
+    "Line": "23",
+    "Year 1924–1983": "Feb 02 1946–Jan 21 1947",
+    "Year 1984–2043": "Jan 29 2006–Feb 17 2007",
+    "Associated element": "Yang Fire",
+    "Heavenly stem": "丙",
+    "Earthly branch": "戌",
+    "Associated animal": "Dog"
+  },
+  {
+    "Line": "24",
+    "Year 1924–1983": "Jan 22 1947–Feb 09 1948",
+    "Year 1984–2043": "Feb 18 2007–Feb 06 2008",
+    "Associated element": "Yin Fire",
+    "Heavenly stem": "丁",
+    "Earthly branch": "亥",
+    "Associated animal": "Pig"
+  },
+  {
+    "Line": "25",
+    "Year 1924–1983": "Feb 10 1948–Jan 28 1949",
+    "Year 1984–2043": "Feb 07 2008–Jan 25 2009",
+    "Associated element": "Yang Earth",
+    "Heavenly stem": "戊",
+    "Earthly branch": "子",
+    "Associated animal": "Rat"
+  },
+  {
+    "Line": "26",
+    "Year 1924–1983": "Jan 29 1949–Feb 16 1950",
+    "Year 1984–2043": "Jan 26 2009–Feb 13 2010",
+    "Associated element": "Yin Earth",
+    "Heavenly stem": "己",
+    "Earthly branch": "丑",
+    "Associated animal": "Ox"
+  },
+  {
+    "Line": "27",
+    "Year 1924–1983": "Feb 17 1950–Feb 05 1951",
+    "Year 1984–2043": "Feb 14 2010–Feb 02 2011",
+    "Associated element": "Yang Metal",
+    "Heavenly stem": "庚",
+    "Earthly branch": "寅",
+    "Associated animal": "Tiger"
+  },
+  {
+    "Line": "28",
+    "Year 1924–1983": "Feb 06 1951–Jan 26 1952",
+    "Year 1984–2043": "Feb 03 2011–Jan 22 2012",
+    "Associated element": "Yin Metal",
+    "Heavenly stem": "辛",
+    "Earthly branch": "卯",
+    "Associated animal": "Rabbit"
+  },
+  {
+    "Line": "29",
+    "Year 1924–1983": "Jan 27 1952–Feb 13 1953",
+    "Year 1984–2043": "Jan 23 2012–Feb 09 2013",
+    "Associated element": "Yang Water",
+    "Heavenly stem": "壬",
+    "Earthly branch": "辰",
+    "Associated animal": "Dragon"
+  },
+  {
+    "Line": "30",
+    "Year 1924–1983": "Feb 14 1953–Feb 02 1954",
+    "Year 1984–2043": "Feb 10 2013–Jan 30 2014",
+    "Associated element": "Yin Water",
+    "Heavenly stem": "癸",
+    "Earthly branch": "巳",
+    "Associated animal": "Snake"
+  },
+  {
+    "Line": "31",
+    "Year 1924–1983": "Feb 03 1954–Jan 23 1955",
+    "Year 1984–2043": "Jan 31 2014–Feb 18 2015",
+    "Associated element": "Yang Wood",
+    "Heavenly stem": "甲",
+    "Earthly branch": "午",
+    "Associated animal": "Horse"
+  },
+  {
+    "Line": "32",
+    "Year 1924–1983": "Jan 24 1955–Feb 11 1956",
+    "Year 1984–2043": "Feb 19 2015–Feb 07 2016",
+    "Associated element": "Yin Wood",
+    "Heavenly stem": "乙",
+    "Earthly branch": "未",
+    "Associated animal": "Goat"
+  },
+  {
+    "Line": "33",
+    "Year 1924–1983": "Feb 12 1956–Jan 30 1957",
+    "Year 1984–2043": "Feb 08 2016–Jan 27 2017",
+    "Associated element": "Yang Fire",
+    "Heavenly stem": "丙",
+    "Earthly branch": "申",
+    "Associated animal": "Monkey"
+  },
+  {
+    "Line": "34",
+    "Year 1924–1983": "Jan 31 1957–Feb 17 1958",
+    "Year 1984–2043": "Jan 28 2017–Feb 15 2018",
+    "Associated element": "Yin Fire",
+    "Heavenly stem": "丁",
+    "Earthly branch": "酉",
+    "Associated animal": "Rooster"
+  },
+  {
+    "Line": "35",
+    "Year 1924–1983": "Feb 18 1958–Feb 07 1959",
+    "Year 1984–2043": "Feb 16 2018–Feb 04 2019",
+    "Associated element": "Yang Earth",
+    "Heavenly stem": "戊",
+    "Earthly branch": "戌",
+    "Associated animal": "Dog"
+  },
+  {
+    "Line": "36",
+    "Year 1924–1983": "Feb 08 1959–Jan 27 1960",
+    "Year 1984–2043": "Feb 05 2019–Jan 24 2020",
+    "Associated element": "Yin Earth",
+    "Heavenly stem": "己",
+    "Earthly branch": "亥",
+    "Associated animal": "Pig"
+  },
+  {
+    "Line": "37",
+    "Year 1924–1983": "Jan 28 1960–Feb 14 1961",
+    "Year 1984–2043": "Jan 25 2020–Feb 11 2021",
+    "Associated element": "Yang Metal",
+    "Heavenly stem": "庚",
+    "Earthly branch": "子",
+    "Associated animal": "Rat"
+  },
+  {
+    "Line": "38",
+    "Year 1924–1983": "Feb 15 1961–Feb 04 1962",
+    "Year 1984–2043": "Feb 12 2021–Jan 31 2022",
+    "Associated element": "Yin Metal",
+    "Heavenly stem": "辛",
+    "Earthly branch": "丑",
+    "Associated animal": "Ox"
+  },
+  {
+    "Line": "39",
+    "Year 1924–1983": "Feb 05 1962–Jan 24 1963",
+    "Year 1984–2043": "Feb 01 2022–Jan 21 2023",
+    "Associated element": "Yang Water",
+    "Heavenly stem": "壬",
+    "Earthly branch": "寅",
+    "Associated animal": "Tiger"
+  },
+  {
+    "Line": "40",
+    "Year 1924–1983": "Jan 25 1963–Feb 12 1964",
+    "Year 1984–2043": "Jan 22 2023–Feb 09 2024",
+    "Associated element": "Yin Water",
+    "Heavenly stem": "癸",
+    "Earthly branch": "卯",
+    "Associated animal": "Rabbit"
+  },
+  {
+    "Line": "41",
+    "Year 1924–1983": "Feb 13 1964–Feb 01 1965",
+    "Year 1984–2043": "Feb 10 2024–Jan 28 2025",
+    "Associated element": "Yang Wood",
+    "Heavenly stem": "甲",
+    "Earthly branch": "辰",
+    "Associated animal": "Dragon"
+  },
+  {
+    "Line": "42",
+    "Year 1924–1983": "Feb 02 1965–Jan 20 1966",
+    "Year 1984–2043": "Jan 29 2025–Feb 16 2026",
+    "Associated element": "Yin Wood",
+    "Heavenly stem": "乙",
+    "Earthly branch": "巳",
+    "Associated animal": "Snake"
+  },
+  {
+    "Line": "43",
+    "Year 1924–1983": "Jan 21 1966–Feb 08 1967",
+    "Year 1984–2043": "Feb 17 2026–Feb 05 2027",
+    "Associated element": "Yang Fire",
+    "Heavenly stem": "丙",
+    "Earthly branch": "午",
+    "Associated animal": "Horse"
+  },
+  {
+    "Line": "44",
+    "Year 1924–1983": "Feb 09 1967–Jan 29 1968",
+    "Year 1984–2043": "Feb 06 2027–Jan 25 2028",
+    "Associated element": "Yin Fire",
+    "Heavenly stem": "丁",
+    "Earthly branch": "未",
+    "Associated animal": "Goat"
+  },
+  {
+    "Line": "45",
+    "Year 1924–1983": "Jan 30 1968–Feb 16 1969",
+    "Year 1984–2043": "Jan 26 2028–Feb 12 2029",
+    "Associated element": "Yang Earth",
+    "Heavenly stem": "戊",
+    "Earthly branch": "申",
+    "Associated animal": "Monkey"
+  },
+  {
+    "Line": "46",
+    "Year 1924–1983": "Feb 17 1969–Feb 05 1970",
+    "Year 1984–2043": "Feb 13 2029–Feb 02 2030",
+    "Associated element": "Yin Earth",
+    "Heavenly stem": "己",
+    "Earthly branch": "酉",
+    "Associated animal": "Rooster"
+  },
+  {
+    "Line": "47",
+    "Year 1924–1983": "Feb 06 1970–Jan 26 1971",
+    "Year 1984–2043": "Feb 03 2030–Jan 22 2031",
+    "Associated element": "Yang Metal",
+    "Heavenly stem": "庚",
+    "Earthly branch": "戌",
+    "Associated animal": "Dog"
+  },
+  {
+    "Line": "48",
+    "Year 1924–1983": "Jan 27 1971–Feb 14 1972",
+    "Year 1984–2043": "Jan 23 2031–Feb 10 2032",
+    "Associated element": "Yin Metal",
+    "Heavenly stem": "辛",
+    "Earthly branch": "亥",
+    "Associated animal": "Pig"
+  },
+  {
+    "Line": "49",
+    "Year 1924–1983": "Feb 15 1972–Feb 02 1973",
+    "Year 1984–2043": "Feb 11 2032–Jan 30 2033",
+    "Associated element": "Yang Water",
+    "Heavenly stem": "壬",
+    "Earthly branch": "子",
+    "Associated animal": "Rat"
+  },
+  {
+    "Line": "50",
+    "Year 1924–1983": "Feb 03 1973–Jan 22 1974",
+    "Year 1984–2043": "Jan 31 2033–Feb 18 2034",
+    "Associated element": "Yin Water",
+    "Heavenly stem": "癸",
+    "Earthly branch": "丑",
+    "Associated animal": "Ox"
+  },
+  {
+    "Line": "51",
+    "Year 1924–1983": "Jan 23 1974–Feb 10 1975",
+    "Year 1984–2043": "Feb 19 2034–Feb 07 2035",
+    "Associated element": "Yang Wood",
+    "Heavenly stem": "甲",
+    "Earthly branch": "寅",
+    "Associated animal": "Tiger"
+  },
+  {
+    "Line": "52",
+    "Year 1924–1983": "Feb 11 1975–Jan 30 1976",
+    "Year 1984–2043": "Feb 08 2035–Jan 27 2036",
+    "Associated element": "Yin Wood",
+    "Heavenly stem": "乙",
+    "Earthly branch": "卯",
+    "Associated animal": "Rabbit"
+  },
+  {
+    "Line": "53",
+    "Year 1924–1983": "Jan 31 1976–Feb 17 1977",
+    "Year 1984–2043": "Jan 28 2036–Feb 14 2037",
+    "Associated element": "Yang Fire",
+    "Heavenly stem": "丙",
+    "Earthly branch": "辰",
+    "Associated animal": "Dragon"
+  },
+  {
+    "Line": "54",
+    "Year 1924–1983": "Feb 18 1977–Feb 06 1978",
+    "Year 1984–2043": "Feb 15 2037–Feb 03 2038",
+    "Associated element": "Yin Fire",
+    "Heavenly stem": "丁",
+    "Earthly branch": "巳",
+    "Associated animal": "Snake"
+  },
+  {
+    "Line": "55",
+    "Year 1924–1983": "Feb 07 1978–Jan 27 1979",
+    "Year 1984–2043": "Feb 04 2038–Jan 23 2039",
+    "Associated element": "Yang Earth",
+    "Heavenly stem": "戊",
+    "Earthly branch": "午",
+    "Associated animal": "Horse"
+  },
+  {
+    "Line": "56",
+    "Year 1924–1983": "Jan 28 1979–Feb 15 1980",
+    "Year 1984–2043": "Jan 24 2039–Feb 11 2040",
+    "Associated element": "Yin Earth",
+    "Heavenly stem": "己",
+    "Earthly branch": "未",
+    "Associated animal": "Goat"
+  },
+  {
+    "Line": "57",
+    "Year 1924–1983": "Feb 16 1980–Feb 04 1981",
+    "Year 1984–2043": "Feb 12 2040–Jan 31 2041",
+    "Associated element": "Yang Metal",
+    "Heavenly stem": "庚",
+    "Earthly branch": "申",
+    "Associated animal": "Monkey"
+  },
+  {
+    "Line": "58",
+    "Year 1924–1983": "Feb 05 1981–Jan 24 1982",
+    "Year 1984–2043": "Feb 01 2041–Jan 21 2042",
+    "Associated element": "Yin Metal",
+    "Heavenly stem": "辛",
+    "Earthly branch": "酉",
+    "Associated animal": "Rooster"
+  },
+  {
+    "Line": "59",
+    "Year 1924–1983": "Jan 25 1982–Feb 12 1983",
+    "Year 1984–2043": "Jan 22 2042–Feb 09 2043",
+    "Associated element": "Yang Water",
+    "Heavenly stem": "壬",
+    "Earthly branch": "戌",
+    "Associated animal": "Dog"
+  },
+  {
+    "Line": "60",
+    "Year 1924–1983": "Feb 13 1983–Feb 01 1984",
+    "Year 1984–2043": "Feb 10 2043–Jan 29 2044",
+    "Associated element": "Yin Water",
+    "Heavenly stem": "癸",
+    "Earthly branch": "亥",
+    "Associated animal": "Pig"
+  }
+]

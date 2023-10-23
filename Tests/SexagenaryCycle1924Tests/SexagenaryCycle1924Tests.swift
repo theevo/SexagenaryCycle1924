@@ -2,11 +2,15 @@ import XCTest
 @testable import SexagenaryCycle1924
 
 final class SexagenaryCycle1924Tests: XCTestCase {
-    func testExample() throws {
-        // XCTest Documentation
-        // https://developer.apple.com/documentation/xctest
-
-        // Defining Test Cases and Test Methods
-        // https://developer.apple.com/documentation/xctest/defining_test_cases_and_test_methods
+    func test_jsonFilePath_isNotEmpty() {
+        let foo = FileHandler()
+        let path = foo.path
+        XCTAssertNotNil(path)
+    }
+    
+    func test_jsonFileURL_isNotEmpty() {
+        let foo = FileHandler()
+        let url = foo.url
+        XCTAssertNotNil(url)
     }
 }
