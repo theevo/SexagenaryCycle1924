@@ -1,6 +1,6 @@
 # Chinese Sexagenary Cycle
 
-[![Unit Tests](https://github.com/theevo/SexagenaryCycle1924/actions/workflows/swift.yml/badge.svg)](https://github.com/theevo/SexagenaryCycle1924/actions/workflows/swift.yml)
+[![Unit Tests](https://github.com/theevo/SexagenaryCycle1924/actions/workflows/unit_tests.yml/badge.svg)](https://github.com/theevo/SexagenaryCycle1924/actions/workflows/unit_tests.yml)
 
 ## Purpose
 
