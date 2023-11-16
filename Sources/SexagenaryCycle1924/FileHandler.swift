@@ -10,11 +10,11 @@ import Foundation
 public class FileHandler {
     public init() { }
     
-    public func load<T: Decodable>(_ filename: String = "Wikipedia-Sexagenary-cycle") -> T {
+    public func load<T: Decodable>(_ filename: String = "Wikipedia-Sexagenary-cycle.json") -> T {
         let data: Data
         let bundle = Bundle.module
 
-        guard let file = bundle.url(forResource: filename, withExtension: "json")
+        guard let file = bundle.url(forResource: filename, withExtension: nil)
             else {
                 fatalError("Couldn't find \(filename) in main bundle.")
         }
