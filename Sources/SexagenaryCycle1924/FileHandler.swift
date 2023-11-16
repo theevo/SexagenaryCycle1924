@@ -7,23 +7,29 @@
 
 import Foundation
 
-class FileHandler {
-    var url: URL?
-    var path: String?
-    var data: Data?
+public class FileHandler {
+    public init() { }
     
-    init() {
-        getPath()
-    }
-    
-    fileprivate func getPath() {
+    public func load<T: Decodable>(_ filename: String = "Wikipedia-Sexagenary-cycle") -> T {
+        let data: Data
         let bundle = Bundle.module
-        guard let myURL = bundle.url(forResource: "Wikipedia-Sexagenary-cycle", withExtension: "json") else {
-            fatalError("unable to locate Wikipedia-Sexagenary-cycle.json")
+
+        guard let file = bundle.url(forResource: filename, withExtension: "json")
+            else {
+                fatalError("Couldn't find \(filename) in main bundle.")
         }
-        url = myURL
-        path = myURL.path
-        
-        data = try? Data(contentsOf: myURL)
+
+        do {
+            data = try Data(contentsOf: file)
+        } catch {
+            fatalError("Couldn't load \(filename) from main bundle:\n\(error)")
+        }
+
+        do {
+            let decoder = JSONDecoder()
+            return try decoder.decode(T.self, from: data)
+        } catch {
+            fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+        }
     }
 }
