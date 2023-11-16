@@ -10,6 +10,7 @@ import Foundation
 class FileHandler {
     var url: URL?
     var path: String?
+    var data: Data?
     
     init() {
         getPath()
@@ -22,5 +23,7 @@ class FileHandler {
         }
         url = myURL
         path = myURL.path
+        
+        data = try? Data(contentsOf: myURL)
     }
 }

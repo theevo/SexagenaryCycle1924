@@ -13,4 +13,10 @@ final class SexagenaryCycle1924Tests: XCTestCase {
         let url = foo.url
         XCTAssertNotNil(url)
     }
+    
+    func test_jsonFileData_isNotEmpty() {
+        let foo = FileHandler()
+        print(foo.data)
+        XCTAssertNotNil(foo.data)
+    }
 }
