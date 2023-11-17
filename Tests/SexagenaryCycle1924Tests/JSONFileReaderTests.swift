@@ -26,5 +26,8 @@ final class TransmogrifierTests: XCTestCase {
         let records: [WikipediaLine] = JSONFileReader().load()
         let sut = Transmogrifier(records)
         XCTAssertNotNil(sut.animals.first?.animal)
+        XCTAssertNotNil(sut.animals.first?.element)
+        XCTAssertNotNil(sut.animals.first?.heavenlyStem)
+        XCTAssertNotNil(sut.animals.first?.earthlyBranch)
     }
 }

@@ -10,6 +10,8 @@ import Foundation
 public struct SexagenaryAnimal {
     public var animal: String
     public var element: String
+    public var heavenlyStem: String
+    public var earthlyBranch: String
 }
 
 public struct Transmogrifier {
@@ -26,7 +28,9 @@ public struct Transmogrifier {
         animals = wikipedia.map({ line in
             SexagenaryAnimal(
                 animal: line.animal,
-                element: line.element
+                element: line.element,
+                heavenlyStem: line.heavenlyStem,
+                earthlyBranch: line.earthlyBranch
             )
         })
     }
