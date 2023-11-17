@@ -1,5 +1,5 @@
 //
-//  FileHandler.swift
+//  JSONFileReader.swift
 //
 //
 //  Created by Theo Vora on 10/22/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-public class FileHandler {
+public class JSONFileReader {
     public init() { }
     
     public func load<T: Decodable>(_ filename: String = "Wikipedia-Sexagenary-cycle.json") -> T {
