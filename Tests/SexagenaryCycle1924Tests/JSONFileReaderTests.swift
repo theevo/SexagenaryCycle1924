@@ -41,7 +41,7 @@ final class TransmogrifierTests: XCTestCase {
         let records: [WikipediaLine] = JSONFileReader().load()
         let sut = Transmogrifier(records)
         
-        let formatter = sut.chineseDateFormatter()
+        let formatter = DateFormatter.chineseDateFormatter()
         
         let expectedDate = formatter.date(from: "1924-02-05")!
         
@@ -55,7 +55,7 @@ final class TransmogrifierTests: XCTestCase {
         let records: [WikipediaLine] = JSONFileReader().load()
         let sut = Transmogrifier(records)
         
-        let formatter = sut.chineseDateFormatter()
+        let formatter = DateFormatter.chineseDateFormatter()
         
         let expectedDate = formatter.date(from: "1925-01-23")!
         
@@ -69,7 +69,7 @@ final class TransmogrifierTests: XCTestCase {
         let records: [WikipediaLine] = JSONFileReader().load()
         let sut = Transmogrifier(records)
         
-        let formatter = sut.chineseDateFormatter()
+        let formatter = DateFormatter.chineseDateFormatter()
         
         let expectedDate = formatter.date(from: "1984-02-02")!
         
@@ -83,7 +83,7 @@ final class TransmogrifierTests: XCTestCase {
         let records: [WikipediaLine] = JSONFileReader().load()
         let sut = Transmogrifier(records)
         
-        let formatter = sut.chineseDateFormatter()
+        let formatter = DateFormatter.chineseDateFormatter()
         
         let expectedDate = formatter.date(from: "1985-02-19")!
         

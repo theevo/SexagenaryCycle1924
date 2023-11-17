@@ -35,15 +35,6 @@ public struct Transmogrifier {
             )
         })
     }
-    
-    public func chineseDateFormatter(dateFormat: String = "yyyy-MM-dd") -> DateFormatter {
-        let formatter = DateFormatter()
-        formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.timeZone = TimeZone(abbreviation: "HKT")!
-        formatter.dateFormat = dateFormat
-        
-        return formatter
-    }
 }
 
 extension WikipediaLine {
@@ -61,12 +52,23 @@ extension WikipediaLine {
         let dateStr1 = String(dates[0])
         let dateStr2 = String(dates[1])
         
-        let formatter = Transmogrifier([]).chineseDateFormatter(dateFormat: "MMM dd yyyy")
+        let formatter = DateFormatter.chineseDateFormatter(dateFormat: "MMM dd yyyy")
         
         guard let date1 = formatter.date(from: dateStr1),
               let date2 = formatter.date(from: dateStr2)
         else { fatalError() }
         
         return (date1, date2)
+    }
+}
+
+extension DateFormatter {
+    public static func chineseDateFormatter(dateFormat: String = "yyyy-MM-dd") -> DateFormatter {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.timeZone = TimeZone(abbreviation: "HKT")!
+        formatter.dateFormat = dateFormat
+        
+        return formatter
     }
 }
