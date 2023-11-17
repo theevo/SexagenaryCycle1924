@@ -30,4 +30,10 @@ final class TransmogrifierTests: XCTestCase {
         XCTAssertNotNil(sut.animals.first?.heavenlyStem)
         XCTAssertNotNil(sut.animals.first?.earthlyBranch)
     }
+    
+    func test_init_animalHasStartDateBefore1983() {
+        let records: [WikipediaLine] = JSONFileReader().load()
+        let sut = Transmogrifier(records)
+        XCTAssertNotNil(sut.animals.first?.startDateBefore1983)
+    }
 }

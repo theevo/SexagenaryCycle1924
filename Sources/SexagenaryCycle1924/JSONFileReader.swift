@@ -12,6 +12,7 @@ public struct SexagenaryAnimal {
     public var element: String
     public var heavenlyStem: String
     public var earthlyBranch: String
+    public var startDateBefore1983: Date
 }
 
 public struct Transmogrifier {
@@ -30,7 +31,8 @@ public struct Transmogrifier {
                 animal: line.animal,
                 element: line.element,
                 heavenlyStem: line.heavenlyStem,
-                earthlyBranch: line.earthlyBranch
+                earthlyBranch: line.earthlyBranch, 
+                startDateBefore1983: Date()
             )
         })
     }
