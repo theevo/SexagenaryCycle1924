@@ -45,7 +45,11 @@ public struct Transmogrifier {
 
 extension WikipediaLine {
     fileprivate var datesBefore1983: (Date, Date) {
-        let dates = yearBefore1983.split(separator: "–")
+        datesFrom(dashSeparated: yearBefore1983)
+    }
+    
+    fileprivate func datesFrom(dashSeparated str: String) -> (Date, Date) {
+        let dates = str.split(separator: "–")
         
         let dateStr1 = String(dates[0])
         let dateStr2 = String(dates[1])
