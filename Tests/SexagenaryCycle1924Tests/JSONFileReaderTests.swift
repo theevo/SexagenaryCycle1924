@@ -50,4 +50,18 @@ final class TransmogrifierTests: XCTestCase {
         
         XCTAssertEqual(sut.animals.first?.startDateBefore1983, expectedDate)
     }
+    
+    func test_init_firstRecordEndDateBefore1983_isCorrect() {
+        let records: [WikipediaLine] = JSONFileReader().load()
+        let sut = Transmogrifier(records)
+        
+        let formatter = sut.chineseDateFormatter()
+        
+        let expectedDate = formatter.date(from: "1925-01-23")!
+        
+        let printMe = formatter.string(from: expectedDate)
+        print("📆", printMe)
+        
+        XCTAssertEqual(sut.animals.first?.endDateBefore1983, expectedDate)
+    }
 }
