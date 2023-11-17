@@ -14,4 +14,6 @@ public struct SexagenaryAnimal {
     public var earthlyBranch: String
     public var startDateBefore1983: Date
     public var endDateBefore1983: Date
+    public var startDateAfter1984: Date
+    public var endDateAfter1984: Date
 }

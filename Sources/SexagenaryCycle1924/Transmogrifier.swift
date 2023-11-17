@@ -21,6 +21,7 @@ public struct Transmogrifier {
         animals = wikipedia.map({ line in
             
             let (date1, date2) = line.datesBefore1983
+            let (date3, date4) = line.datesAfter1984
             
             return SexagenaryAnimal(
                 animal: line.animal,
@@ -28,7 +29,9 @@ public struct Transmogrifier {
                 heavenlyStem: line.heavenlyStem,
                 earthlyBranch: line.earthlyBranch,
                 startDateBefore1983: date1,
-                endDateBefore1983: date2
+                endDateBefore1983: date2,
+                startDateAfter1984: date3,
+                endDateAfter1984: date4
             )
         })
     }
@@ -46,6 +49,10 @@ public struct Transmogrifier {
 extension WikipediaLine {
     fileprivate var datesBefore1983: (Date, Date) {
         datesFrom(dashSeparated: yearBefore1983)
+    }
+    
+    fileprivate var datesAfter1984: (Date, Date) {
+        datesFrom(dashSeparated: yearAfter1984)
     }
     
     fileprivate func datesFrom(dashSeparated str: String) -> (Date, Date) {
