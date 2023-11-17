@@ -7,11 +7,28 @@
 
 import Foundation
 
+public struct SexagenaryAnimal {
+    public var animal: String
+    public var element: String
+}
+
 public struct Transmogrifier {
     public var wikipedia: [WikipediaLine]?
+    public var animals: [SexagenaryAnimal] = []
     
     public init(_ wikipediaLines: [WikipediaLine]) {
         self.wikipedia = wikipediaLines
+        mapAnimals()
+    }
+    
+    private mutating func mapAnimals() {
+        guard let wikipedia = wikipedia else { return }
+        animals = wikipedia.map({ line in
+            SexagenaryAnimal(
+                animal: line.animal,
+                element: line.element
+            )
+        })
     }
 }
 

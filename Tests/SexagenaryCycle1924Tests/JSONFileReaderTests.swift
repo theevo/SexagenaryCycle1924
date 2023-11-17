@@ -21,4 +21,10 @@ final class TransmogrifierTests: XCTestCase {
         let sut = Transmogrifier(records)
         XCTAssertNotNil(sut.wikipedia)
     }
+    
+    func test_init_createsSexagenaryAnimal() {
+        let records: [WikipediaLine] = JSONFileReader().load()
+        let sut = Transmogrifier(records)
+        XCTAssertNotNil(sut.animals.first?.animal)
+    }
 }
