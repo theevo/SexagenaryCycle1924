@@ -7,10 +7,10 @@
 
 import Foundation
 
-public class JSONFileReader {
+public struct JSONFileReader {
     public init() { }
     
-    public func load<T: Decodable>(_ filename: String = "Wikipedia-Sexagenary-cycle.json") -> T {
+    public func load<T: Decodable>(filename: String = "Wikipedia-Sexagenary-cycle.json") -> T {
         let data: Data
         let bundle = Bundle.module
 
@@ -30,6 +30,17 @@ public class JSONFileReader {
             return try decoder.decode(T.self, from: data)
         } catch {
             fatalError("Couldn't parse \(filename) as \(T.self):\n\(error)")
+        }
+    }
+    
+    public func decode<T: Decodable>(string: String) -> T {
+        let data = Data(string.utf8)
+        
+        do {
+            let decoder = JSONDecoder()
+            return try decoder.decode(T.self, from: data)
+        } catch {
+            fatalError("Couldn't parse \(string) as \(T.self):\n\(error)")
         }
     }
 }
