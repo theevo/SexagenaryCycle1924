@@ -15,22 +15,10 @@ final class JSONFileReaderTests: XCTestCase {
     }
 }
 
-struct WikipediaLine: Decodable {
-    var line: String
-    var yearBefore1983: String
-    var yearAfter1984: String
-    var element: String
-    var heavenlyStem: String
-    var earthlyBranch: String
-    var animal: String
-    
-    enum CodingKeys: String, CodingKey {
-        case line = "Line"
-        case yearBefore1983 = "Year 1924–1983"
-        case yearAfter1984 = "Year 1984–2043"
-        case element = "Associated element"
-        case heavenlyStem = "Heavenly stem"
-        case earthlyBranch = "Earthly branch"
-        case animal = "Associated animal"
+final class TransmogrifierTests: XCTestCase {
+    func test_init_acceptsParamArrayOfWikipediaLines() {
+        let records: [WikipediaLine] = JSONFileReader().load()
+        let sut = Transmogrifier(records)
+        XCTAssertNotNil(sut.wikipedia)
     }
 }

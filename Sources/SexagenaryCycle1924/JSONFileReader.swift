@@ -7,6 +7,14 @@
 
 import Foundation
 
+public struct Transmogrifier {
+    public var wikipedia: [WikipediaLine]?
+    
+    public init(_ wikipediaLines: [WikipediaLine]) {
+        self.wikipedia = wikipediaLines
+    }
+}
+
 public class JSONFileReader {
     public init() { }
     
