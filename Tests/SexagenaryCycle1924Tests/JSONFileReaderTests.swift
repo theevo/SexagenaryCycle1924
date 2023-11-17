@@ -41,12 +41,7 @@ final class TransmogrifierTests: XCTestCase {
         let records: [WikipediaLine] = JSONFileReader().load()
         let sut = Transmogrifier(records)
         
-        let formatter = DateFormatter.chineseDateFormatter()
-        
-        let expectedDate = formatter.date(from: "1924-02-05")!
-        
-        let printMe = formatter.string(from: expectedDate)
-        print("📆", printMe)
+        let expectedDate = chineseDate(from: "1924-02-05")
         
         XCTAssertEqual(sut.animals.first?.startDateBefore1983, expectedDate)
     }
@@ -54,13 +49,8 @@ final class TransmogrifierTests: XCTestCase {
     func test_init_firstRecordEndDateBefore1983_isCorrect() {
         let records: [WikipediaLine] = JSONFileReader().load()
         let sut = Transmogrifier(records)
-        
-        let formatter = DateFormatter.chineseDateFormatter()
-        
-        let expectedDate = formatter.date(from: "1925-01-23")!
-        
-        let printMe = formatter.string(from: expectedDate)
-        print("📆", printMe)
+                
+        let expectedDate = chineseDate(from: "1925-01-23")
         
         XCTAssertEqual(sut.animals.first?.endDateBefore1983, expectedDate)
     }
@@ -69,12 +59,7 @@ final class TransmogrifierTests: XCTestCase {
         let records: [WikipediaLine] = JSONFileReader().load()
         let sut = Transmogrifier(records)
         
-        let formatter = DateFormatter.chineseDateFormatter()
-        
-        let expectedDate = formatter.date(from: "1984-02-02")!
-        
-        let printMe = formatter.string(from: expectedDate)
-        print("📆", printMe)
+        let expectedDate = chineseDate(from: "1984-02-02")
         
         XCTAssertEqual(sut.animals.first?.startDateAfter1984, expectedDate)
     }
@@ -83,13 +68,16 @@ final class TransmogrifierTests: XCTestCase {
         let records: [WikipediaLine] = JSONFileReader().load()
         let sut = Transmogrifier(records)
         
-        let formatter = DateFormatter.chineseDateFormatter()
-        
-        let expectedDate = formatter.date(from: "1985-02-19")!
-        
-        let printMe = formatter.string(from: expectedDate)
-        print("📆", printMe)
+        let expectedDate = chineseDate(from: "1985-02-19")
         
         XCTAssertEqual(sut.animals.first?.endDateAfter1984, expectedDate)
+    }
+    
+    // MARK: - Helpers
+    
+    fileprivate func chineseDate(from str: String) -> Date {
+        let formatter = DateFormatter.chineseDateFormatter()
+        guard let date = formatter.date(from: str) else { fatalError() }
+        return date
     }
 }
