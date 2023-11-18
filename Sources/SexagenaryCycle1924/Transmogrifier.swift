@@ -20,8 +20,8 @@ public struct Transmogrifier {
         guard let wikipedia = wikipedia else { return }
         animals = wikipedia.map({ line in
             
-            let (date1, date2) = line.datesBefore1983
-            let (date3, date4) = line.datesAfter1984
+            let (date1, date2) = datesBefore1983(line)
+            let (date3, date4) = datesAfter1984(line)
             
             return SexagenaryAnimal(
                 animal: line.animal,
@@ -37,13 +37,13 @@ public struct Transmogrifier {
     }
 }
 
-extension WikipediaLine {
-    fileprivate var datesBefore1983: (Date, Date) {
-        datesFrom(dashSeparated: yearBefore1983)
+extension Transmogrifier {
+    fileprivate func datesBefore1983(_ line: WikipediaLine) -> (Date, Date) {
+        datesFrom(dashSeparated: line.yearBefore1983)
     }
     
-    fileprivate var datesAfter1984: (Date, Date) {
-        datesFrom(dashSeparated: yearAfter1984)
+    fileprivate func datesAfter1984(_ line: WikipediaLine) -> (Date, Date) {
+        datesFrom(dashSeparated: line.yearAfter1984)
     }
     
     fileprivate func datesFrom(dashSeparated str: String) -> (Date, Date) {
