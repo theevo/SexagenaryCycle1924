@@ -11,3 +11,15 @@
 [GMT +8 Countries / UTC +8 Countries 2023](https://worldpopulationreview.com/country-rankings/gmt-8-countries)
 
 [Swift DateFormatter Cheatsheet [+Formulas, Parsing Dates]](https://www.advancedswift.com/date-formatter-cheatsheet-formulas-swift/)
+
+## Init that throws
+
+[Try Catch Throw: Error Handling in Swift with Code Examples](https://www.avanderlee.com/swift/try-catch-throw-error-handling/#throwing-initializer-in-swift)
+
+## XCTAssertThrowsError
+
+[Testing error code paths in Swift | Swift by Sundell](https://www.swiftbysundell.com/articles/testing-error-code-paths-in-swift/)
+
+## Unit Test enum with Associated Values
+
+[How to Unit Test Enumerations in Swift | Quality Coding](https://qualitycoding.org/unit-test-enumerations-swift/)
