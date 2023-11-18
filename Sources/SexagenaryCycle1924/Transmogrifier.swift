@@ -20,32 +20,20 @@ public struct Transmogrifier {
         guard let wikipedia = wikipedia else { return }
         animals = try wikipedia.map({ line in
             
-            let (date1, date2) = try datesBefore1983(line)
-            let (date3, date4) = try datesAfter1984(line)
-            
-            let range1 = SexagenaryAnimal.DateRange(start: date1, end: date2)
-            let range2 = SexagenaryAnimal.DateRange(start: date3, end: date4)
+            let ranges = try buildDateRangesFrom(wikiLine: line)
             
             return SexagenaryAnimal(
                 animal: line.animal,
                 element: line.element,
                 heavenlyStem: line.heavenlyStem,
                 earthlyBranch: line.earthlyBranch,
-                dates: [range1, range2]
+                dates: ranges
             )
         })
     }
 }
 
 extension Transmogrifier {
-    fileprivate func datesBefore1983(_ line: WikipediaLine) throws -> (Date, Date) {
-        try datesFrom(dashSeparated: line.yearBefore1983)
-    }
-    
-    fileprivate func datesAfter1984(_ line: WikipediaLine) throws -> (Date, Date) {
-        try datesFrom(dashSeparated: line.yearAfter1984)
-    }
-    
     fileprivate func datesFrom(dashSeparated str: String) throws -> (Date, Date) {
         let dates = str.split(separator: "–")
         
@@ -63,6 +51,18 @@ extension Transmogrifier {
             throw TransmogrifierError.failedToParseDate(string)
         }
         return date
+    }
+    
+    fileprivate func buildDateRangesFrom(wikiLine line: WikipediaLine) throws -> [SexagenaryAnimal.DateRange] {
+        let range1 = try buildDateRangeFrom(string: line.yearBefore1983)
+        let range2 = try buildDateRangeFrom(string: line.yearAfter1984)
+        
+        return [range1, range2]
+    }
+    
+    fileprivate func buildDateRangeFrom(string: String) throws -> SexagenaryAnimal.DateRange {
+        let (date1, date2) = try datesFrom(dashSeparated: string)
+        return SexagenaryAnimal.DateRange(start: date1, end: date2)
     }
 }
 
