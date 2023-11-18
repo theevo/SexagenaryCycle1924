@@ -23,6 +23,9 @@ public struct Transmogrifier {
             let (date1, date2) = try datesBefore1983(line)
             let (date3, date4) = try datesAfter1984(line)
             
+            let range1 = SexagenaryAnimal.DateRange(start: date1, end: date2)
+            let range2 = SexagenaryAnimal.DateRange(start: date3, end: date4)
+            
             return SexagenaryAnimal(
                 animal: line.animal,
                 element: line.element,
@@ -31,7 +34,8 @@ public struct Transmogrifier {
                 startDateBefore1983: date1,
                 endDateBefore1983: date2,
                 startDateAfter1984: date3,
-                endDateAfter1984: date4
+                endDateAfter1984: date4,
+                dates: [range1, range2]
             )
         })
     }

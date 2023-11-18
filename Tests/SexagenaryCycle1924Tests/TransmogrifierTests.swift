@@ -80,6 +80,22 @@ final class TransmogrifierTests: XCTestCase {
         XCTAssertTrue(true)
     }
     
+    func test_dates_containsTwoDateRanges() {
+        let lines: [WikipediaLine] = JSONFileReader().decode(string: jsonSample())
+        
+        guard let sut = try? Transmogrifier(lines) else {
+            XCTFail("Failed to create Transmogrifier")
+            return
+        }
+        
+        guard let first = sut.animals.first else {
+            XCTFail("Expected there to be animals but found 0 animals.")
+            return
+        }
+        
+        XCTAssertEqual(first.dates.count, 2)
+    }
+    
     // MARK: - Helpers
     
     fileprivate func buildSUT() -> Transmogrifier {
@@ -161,5 +177,9 @@ final class TransmogrifierTests: XCTestCase {
   },
 ]
 """
+    }
+    
+    fileprivate func jsonSampleEmpty() -> String {
+        return "[]"
     }
 }

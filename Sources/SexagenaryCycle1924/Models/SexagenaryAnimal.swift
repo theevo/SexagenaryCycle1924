@@ -16,4 +16,10 @@ public struct SexagenaryAnimal {
     public var endDateBefore1983: Date
     public var startDateAfter1984: Date
     public var endDateAfter1984: Date
+    public var dates: [DateRange]
+    
+    public struct DateRange {
+        var start: Date
+        var end: Date
+    }
 }
