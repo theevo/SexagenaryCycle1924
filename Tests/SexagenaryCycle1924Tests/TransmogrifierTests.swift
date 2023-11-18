@@ -11,7 +11,7 @@ import SexagenaryCycle1924
 final class TransmogrifierTests: XCTestCase {
     func test_init_acceptsParamArrayOfWikipediaLines() throws {
         let sut = try buildSUT()
-        XCTAssertNotNil(sut.wikipedia)
+        XCTAssertTrue(sut.wikipedia.notEmpty)
     }
     
     func test_init_createsSexagenaryAnimal() throws {

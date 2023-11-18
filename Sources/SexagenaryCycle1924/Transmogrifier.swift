@@ -8,7 +8,7 @@
 import Foundation
 
 public struct Transmogrifier {
-    public var wikipedia: [WikipediaLine]?
+    public var wikipedia: [WikipediaLine]
     public var animals: [SexagenaryAnimal] = []
     
     public init(_ wikipediaLines: [WikipediaLine]) throws {
@@ -17,7 +17,6 @@ public struct Transmogrifier {
     }
     
     private mutating func mapAnimals() throws {
-        guard let wikipedia = wikipedia else { return }
         animals = try wikipedia.map({ line in
             
             let ranges = try buildDateRangesFrom(wikiLine: line)
