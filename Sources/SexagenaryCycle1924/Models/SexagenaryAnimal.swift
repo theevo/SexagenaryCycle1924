@@ -12,14 +12,10 @@ public struct SexagenaryAnimal {
     public var element: String
     public var heavenlyStem: String
     public var earthlyBranch: String
-    public var startDateBefore1983: Date
-    public var endDateBefore1983: Date
-    public var startDateAfter1984: Date
-    public var endDateAfter1984: Date
     public var dates: [DateRange]
     
     public struct DateRange {
-        var start: Date
-        var end: Date
+        public var start: Date
+        public var end: Date
     }
 }

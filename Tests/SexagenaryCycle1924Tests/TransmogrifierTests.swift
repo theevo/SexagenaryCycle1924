@@ -24,7 +24,7 @@ final class TransmogrifierTests: XCTestCase {
     
     func test_init_animalHasStartDateBefore1983() {
         let sut = buildSUT()
-        XCTAssertNotNil(sut.animals.first?.startDateBefore1983)
+        XCTAssertNotNil(sut.animals.first?.dates.first)
     }
     
     func test_init_firstRecordStartDateBefore1983_isCorrect() {
@@ -32,7 +32,7 @@ final class TransmogrifierTests: XCTestCase {
         
         let expectedDate = chineseDate(from: "1924-02-05")
         
-        XCTAssertEqual(sut.animals.first?.startDateBefore1983, expectedDate)
+        XCTAssertEqual(sut.animals.first?.dates[0].start, expectedDate)
     }
     
     func test_init_firstRecordEndDateBefore1983_isCorrect() {
@@ -40,7 +40,7 @@ final class TransmogrifierTests: XCTestCase {
                 
         let expectedDate = chineseDate(from: "1925-01-23")
         
-        XCTAssertEqual(sut.animals.first?.endDateBefore1983, expectedDate)
+        XCTAssertEqual(sut.animals.first?.dates[0].end, expectedDate)
     }
     
     func test_init_firstRecordStartDateAfter1984_isCorrect() {
@@ -48,7 +48,7 @@ final class TransmogrifierTests: XCTestCase {
         
         let expectedDate = chineseDate(from: "1984-02-02")
         
-        XCTAssertEqual(sut.animals.first?.startDateAfter1984, expectedDate)
+        XCTAssertEqual(sut.animals.first?.dates[1].start, expectedDate)
     }
     
     func test_init_firstRecordEndDateAfter1984_isCorrect() {
@@ -56,7 +56,7 @@ final class TransmogrifierTests: XCTestCase {
         
         let expectedDate = chineseDate(from: "1985-02-19")
         
-        XCTAssertEqual(sut.animals.first?.endDateAfter1984, expectedDate)
+        XCTAssertEqual(sut.animals.first?.dates[1].end, expectedDate)
     }
     
     func test_badDate_throwsError() {

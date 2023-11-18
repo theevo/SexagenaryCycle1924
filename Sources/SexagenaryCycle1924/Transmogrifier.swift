@@ -31,10 +31,6 @@ public struct Transmogrifier {
                 element: line.element,
                 heavenlyStem: line.heavenlyStem,
                 earthlyBranch: line.earthlyBranch,
-                startDateBefore1983: date1,
-                endDateBefore1983: date2,
-                startDateAfter1984: date3,
-                endDateAfter1984: date4,
                 dates: [range1, range2]
             )
         })
