@@ -16,7 +16,21 @@ public struct ZodiacQuery {
     }
     
     public func birthday(date: String) -> SexagenaryAnimal {
-        let animal = SexagenaryAnimal(animal: "Horse", element: "", heavenlyStem: "", earthlyBranch: "", dates: [])
+        let formatter = DateFormatter.chineseDateFormatter(dateFormat: "MM-dd-yyyy")
+        guard let date = formatter.date(from: date) else {
+            fatalError()
+        }
+        
+        guard let animal = contains(date: date) else {
+            fatalError()
+        }
+        
         return animal
+    }
+    
+    fileprivate func contains(date: Date) -> SexagenaryAnimal? {
+        return animals.first { animal in
+            animal.contains(date: date)
+        }
     }
 }

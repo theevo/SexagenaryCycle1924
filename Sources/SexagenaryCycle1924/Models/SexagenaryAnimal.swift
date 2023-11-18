@@ -19,3 +19,23 @@ public struct SexagenaryAnimal {
         public var end: Date
     }
 }
+
+extension SexagenaryAnimal {
+    public func contains(date: Date) -> Bool {
+        for range in dates {
+            if range.contains(date: date) == false {
+                return false
+            } else {
+                return true
+            }
+        }
+        return false
+    }
+}
+
+extension SexagenaryAnimal.DateRange {
+    public func contains(date: Date) -> Bool {
+        let range = start...end
+        return range.contains(date)
+    }
+}
