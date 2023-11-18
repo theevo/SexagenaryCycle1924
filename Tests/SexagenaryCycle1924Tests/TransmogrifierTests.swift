@@ -9,50 +9,46 @@ import XCTest
 import SexagenaryCycle1924
 
 final class TransmogrifierTests: XCTestCase {
-    func test_init_acceptsParamArrayOfWikipediaLines() {
-        let sut = buildSUT()
+    func test_init_acceptsParamArrayOfWikipediaLines() throws {
+        let sut = try buildSUT()
         XCTAssertNotNil(sut.wikipedia)
     }
     
-    func test_init_createsSexagenaryAnimal() {
-        let sut = buildSUT()
+    func test_init_createsSexagenaryAnimal() throws {
+        let sut = try buildSUT()
         XCTAssertNotNil(sut.animals.first?.animal)
         XCTAssertNotNil(sut.animals.first?.element)
         XCTAssertNotNil(sut.animals.first?.heavenlyStem)
         XCTAssertNotNil(sut.animals.first?.earthlyBranch)
     }
     
-    func test_init_animalHasStartDateBefore1983() {
-        let sut = buildSUT()
-        XCTAssertNotNil(sut.animals.first?.dates.first)
-    }
     
-    func test_init_firstRecordStartDateBefore1983_isCorrect() {
-        let sut = buildSUT()
+    func test_init_firstRecordStartDateBefore1983_isCorrect() throws {
+        let sut = try buildSUT()
         
         let expectedDate = chineseDate(from: "1924-02-05")
         
         XCTAssertEqual(sut.animals.first?.dates[0].start, expectedDate)
     }
     
-    func test_init_firstRecordEndDateBefore1983_isCorrect() {
-        let sut = buildSUT()
+    func test_init_firstRecordEndDateBefore1983_isCorrect() throws {
+        let sut = try buildSUT()
                 
         let expectedDate = chineseDate(from: "1925-01-23")
         
         XCTAssertEqual(sut.animals.first?.dates[0].end, expectedDate)
     }
     
-    func test_init_firstRecordStartDateAfter1984_isCorrect() {
-        let sut = buildSUT()
+    func test_init_firstRecordStartDateAfter1984_isCorrect() throws {
+        let sut = try buildSUT()
         
         let expectedDate = chineseDate(from: "1984-02-02")
         
         XCTAssertEqual(sut.animals.first?.dates[1].start, expectedDate)
     }
     
-    func test_init_firstRecordEndDateAfter1984_isCorrect() {
-        let sut = buildSUT()
+    func test_init_firstRecordEndDateAfter1984_isCorrect() throws {
+        let sut = try buildSUT()
         
         let expectedDate = chineseDate(from: "1985-02-19")
         
@@ -98,9 +94,9 @@ final class TransmogrifierTests: XCTestCase {
     
     // MARK: - Helpers
     
-    fileprivate func buildSUT() -> Transmogrifier {
+    fileprivate func buildSUT() throws -> Transmogrifier {
         let records: [WikipediaLine] = JSONFileReader().load()
-        return try! Transmogrifier(records)
+        return try Transmogrifier(records)
     }
     
     fileprivate func chineseDate(from str: String) -> Date {
