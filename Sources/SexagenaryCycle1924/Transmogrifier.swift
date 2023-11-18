@@ -52,12 +52,15 @@ extension Transmogrifier {
         let dateStr1 = String(dates[0])
         let dateStr2 = String(dates[1])
         
-        let formatter = DateFormatter.chineseDateFormatter(dateFormat: "MMM dd yyyy")
-        
-        guard let date1 = formatter.date(from: dateStr1),
-              let date2 = formatter.date(from: dateStr2)
-        else { fatalError() }
+        let date1 = dateInChinaTimeZoneFrom(string: dateStr1)
+        let date2 = dateInChinaTimeZoneFrom(string: dateStr2)
         
         return (date1, date2)
+    }
+    
+    fileprivate func dateInChinaTimeZoneFrom(string: String) -> Date {
+        let formatter = DateFormatter.chineseDateFormatter(dateFormat: "MMM dd yyyy")
+        guard let date = formatter.date(from: string) else { fatalError() }
+        return date
     }
 }
