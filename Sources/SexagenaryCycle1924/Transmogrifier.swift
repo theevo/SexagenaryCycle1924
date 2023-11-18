@@ -52,15 +52,29 @@ extension Transmogrifier {
         let dateStr1 = String(dates[0])
         let dateStr2 = String(dates[1])
         
-        let date1 = dateInChinaTimeZoneFrom(string: dateStr1)
-        let date2 = dateInChinaTimeZoneFrom(string: dateStr2)
-        
+        let date1 = try! dateInChinaTimeZoneFrom(string: dateStr1)
+        let date2 = try! dateInChinaTimeZoneFrom(string: dateStr2)
         return (date1, date2)
     }
     
-    fileprivate func dateInChinaTimeZoneFrom(string: String) -> Date {
+    fileprivate func dateInChinaTimeZoneFrom(string: String) throws -> Date {
         let formatter = DateFormatter.chineseDateFormatter(dateFormat: "MMM dd yyyy")
-        guard let date = formatter.date(from: string) else { fatalError() }
+        guard let date = formatter.date(from: string) else {
+            throw TransmogrifierError.failedToParseDate(string)
+        }
         return date
+    }
+}
+
+extension Transmogrifier {
+    enum TransmogrifierError: LocalizedError {
+        case failedToParseDate(String)
+        
+        var errorDescription: String? {
+            switch self {
+            case .failedToParseDate(let str):
+                return "Could not parse date: \(str)"
+            }
+        }
     }
 }
