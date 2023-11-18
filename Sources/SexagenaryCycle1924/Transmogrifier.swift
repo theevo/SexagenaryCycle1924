@@ -53,14 +53,14 @@ extension Transmogrifier {
     }
     
     fileprivate func buildDateRangesFrom(wikiLine line: WikipediaLine) throws -> [SexagenaryAnimal.DateRange] {
-        let range1 = try buildDateRangeFrom(string: line.yearBefore1983)
-        let range2 = try buildDateRangeFrom(string: line.yearAfter1984)
+        let range1 = try buildDateRangeFrom(dashSeparated: line.yearBefore1983)
+        let range2 = try buildDateRangeFrom(dashSeparated: line.yearAfter1984)
         
         return [range1, range2]
     }
     
-    fileprivate func buildDateRangeFrom(string: String) throws -> SexagenaryAnimal.DateRange {
-        let (date1, date2) = try datesFrom(dashSeparated: string)
+    fileprivate func buildDateRangeFrom(dashSeparated: String) throws -> SexagenaryAnimal.DateRange {
+        let (date1, date2) = try datesFrom(dashSeparated: dashSeparated)
         return SexagenaryAnimal.DateRange(start: date1, end: date2)
     }
 }
