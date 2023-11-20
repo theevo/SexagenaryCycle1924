@@ -10,7 +10,7 @@ import SexagenaryCycle1924
 
 final class ZodiacQueryTests: XCTestCase {
 
-    func test_giveBirthday_getAnimal() {
+    func test_whenBirthday11261978_animalIsHorse() {
         let query = ZodiacQuery()
         let animal = query.birthday(date: "11-26-1978")
         XCTAssertEqual(animal.animal, "Horse")
