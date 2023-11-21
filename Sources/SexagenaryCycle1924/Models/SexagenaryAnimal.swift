@@ -22,14 +22,9 @@ public struct SexagenaryAnimal {
 
 extension SexagenaryAnimal {
     public func contains(date: Date) -> Bool {
-        for range in dates {
-            if range.contains(date: date) == false {
-                return false
-            } else {
-                return true
-            }
+        dates.contains { range in
+            range.contains(date: date)
         }
-        return false
     }
 }
 

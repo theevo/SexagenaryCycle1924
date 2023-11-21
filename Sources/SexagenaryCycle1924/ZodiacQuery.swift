@@ -15,6 +15,7 @@ public struct ZodiacQuery {
         self.animals = try! Transmogrifier(records).animals
     }
     
+    // TODO: - throws?
     public func birthday(date: String) -> SexagenaryAnimal {
         let formatter = DateFormatter.chineseDateFormatter(dateFormat: "MM-dd-yyyy")
         guard let date = formatter.date(from: date) else {
@@ -22,7 +23,7 @@ public struct ZodiacQuery {
         }
         
         guard let animal = contains(date: date) else {
-            fatalError()
+            fatalError("could not find animal matching this date: \(date)")
         }
         
         return animal
