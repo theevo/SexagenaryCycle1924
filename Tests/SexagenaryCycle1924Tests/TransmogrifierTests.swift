@@ -16,7 +16,7 @@ final class TransmogrifierTests: XCTestCase {
     
     func test_init_createsSexagenaryAnimal() throws {
         let sut = try buildSUT()
-        XCTAssertNotNil(sut.animals.first?.animal)
+        XCTAssertNotNil(sut.animals.first?.name)
         XCTAssertNotNil(sut.animals.first?.element)
         XCTAssertNotNil(sut.animals.first?.heavenlyStem)
         XCTAssertNotNil(sut.animals.first?.earthlyBranch)

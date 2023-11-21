@@ -22,7 +22,7 @@ public struct Transmogrifier {
             let ranges = try buildDateRangesFrom(wikiLine: line)
             
             return SexagenaryAnimal(
-                animal: line.animal,
+                name: line.animal,
                 element: line.element,
                 heavenlyStem: line.heavenlyStem,
                 earthlyBranch: line.earthlyBranch,

@@ -8,7 +8,7 @@
 import Foundation
 
 public struct SexagenaryAnimal {
-    public var animal: String
+    public var name: String
     public var element: String
     public var heavenlyStem: String
     public var earthlyBranch: String
