@@ -8,10 +8,10 @@
 import Foundation
 
 extension DateFormatter {
-    public static func chineseDateFormatter(dateFormat: String = "yyyy-MM-dd") -> DateFormatter {
+    public static func inUTCTimeZone(dateFormat: String = "yyyy-MM-dd") -> DateFormatter {
         let formatter = DateFormatter()
         formatter.locale = Locale(identifier: "en_US_POSIX")
-        formatter.timeZone = TimeZone(abbreviation: "HKT")!
+        formatter.timeZone = TimeZone(abbreviation: "UTC")!
         formatter.dateFormat = dateFormat
         
         return formatter

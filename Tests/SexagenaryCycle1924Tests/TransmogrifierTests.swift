@@ -100,7 +100,7 @@ final class TransmogrifierTests: XCTestCase {
     }
     
     fileprivate func chineseDate(from str: String) -> Date {
-        let formatter = DateFormatter.chineseDateFormatter()
+        let formatter = DateFormatter.inUTCTimeZone()
         guard let date = formatter.date(from: str) else { fatalError() }
         return date
     }

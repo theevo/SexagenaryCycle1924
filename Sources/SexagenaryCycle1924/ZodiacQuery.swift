@@ -17,7 +17,7 @@ public struct ZodiacQuery {
     
     // TODO: - throws?
     public func birthday(date: String) -> SexagenaryAnimal {
-        let formatter = DateFormatter.chineseDateFormatter(dateFormat: "MM-dd-yyyy")
+        let formatter = DateFormatter.inUTCTimeZone(dateFormat: "MM-dd-yyyy")
         guard let date = formatter.date(from: date) else {
             fatalError()
         }
