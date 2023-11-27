@@ -33,4 +33,18 @@ final class ZodiacQueryTests: XCTestCase {
         let animal = query.birthday(date: "09-01-1985")
         XCTAssertEqual(animal.name, "Ox")
     }
+    
+    func test_whenBirthday02_11_1975_animalIsRabbit_elementIsYinWood() {
+        let query = ZodiacQuery()
+        let animal = query.birthday(date: "02-11-1975")
+        XCTAssertEqual(animal.name, "Rabbit")
+        XCTAssertEqual(animal.element, "Yin Wood")
+    }
+    
+    func test_whenBirthday02_10_1975_animalIsRabbit_elementIsYangWood() {
+        let query = ZodiacQuery()
+        let animal = query.birthday(date: "02-10-1975")
+        XCTAssertEqual(animal.name, "Tiger")
+        XCTAssertEqual(animal.element, "Yang Wood")
+    }
 }
