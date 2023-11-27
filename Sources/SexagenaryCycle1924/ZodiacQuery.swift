@@ -9,7 +9,7 @@ import Foundation
 
 public struct ZodiacQuery {
     public var animal: SexagenaryAnimal
-    public var compatibilities: [String]
+    public var compatibilities: [SexagenaryAnimal.Name]
     
     let records: ZodiacRecords
     
