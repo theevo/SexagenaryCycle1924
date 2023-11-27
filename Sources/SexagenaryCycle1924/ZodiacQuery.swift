@@ -9,11 +9,13 @@ import Foundation
 
 public struct ZodiacQuery {
     public var animal: SexagenaryAnimal
+    public var compatibilities: [String]
     
     let records: ZodiacRecords
     
     public init(birthday: String) throws {
         self.records = try ZodiacRecords()
         self.animal = try records.animalWith(birthday: birthday)
+        self.compatibilities = records.compatibleSignsWith(animal: self.animal)
     }
 }
