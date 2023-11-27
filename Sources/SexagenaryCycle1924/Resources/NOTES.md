@@ -1,5 +1,34 @@
 #  Notes
 
+## Questions
+
+### How do you call a method during init?
+
+```swift
+public struct ZodiacQuery {
+    public var animal: SexagenaryAnimal?
+    
+    let animals: [SexagenaryAnimal]
+    
+    public init(birthday: String) throws {
+        let records: [WikipediaLine] = JSONFileReader().load()
+        self.animals = try! Transmogrifier(records).animals
+        
+        self.animal = try animalWith(birthday: birthday)
+    }
+```
+
+```error
+'self' used before all stored properties are initialized
+```
+
+Option 1: make the property optional
+
+Option 2: outsource the work to another object
+
+Option 3: make the method that is doing the work static
+
+
 ## Design Decisions
 
 ### UTC time zone, not China time zone
