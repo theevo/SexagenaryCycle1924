@@ -30,6 +30,8 @@ internal struct ZodiacRecords {
     
     func compatibleSignsWith(animal: SexagenaryAnimal) -> [String] {
         switch animal.name.rawValue {
+        case "Goat":
+            return ["Goat", "Rabbit", "Horse", "Pig"]
         case "Horse":
             return ["Dog", "Goat", "Tiger"]
         default:

@@ -54,4 +54,12 @@ final class ZodiacQueryTests: XCTestCase {
         XCTAssertTrue(query.compatibilities.contains("Goat"))
         XCTAssertTrue(query.compatibilities.contains("Tiger"))
     }
+    
+    func test_whenAnimalIsGoat_compatibilitiesContain_Goat_Rabbit_Horse_Pig() throws {
+        let query = try ZodiacQuery(birthday: "03-01-1979")
+        XCTAssertTrue(query.compatibilities.contains("Goat"))
+        XCTAssertTrue(query.compatibilities.contains("Rabbit"))
+        XCTAssertTrue(query.compatibilities.contains("Horse"))
+        XCTAssertTrue(query.compatibilities.contains("Pig"))
+    }
 }
