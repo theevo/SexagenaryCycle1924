@@ -24,9 +24,45 @@ public struct ZodiacQuery {
 
 Option 1: make the property optional
 
-Option 2: outsource the work to another object
+Option 2: make the method that is doing the work static
 
-Option 3: make the method that is doing the work static
+Option 3: outsource the work to another object
+
+```swift
+public struct ZodiacQuery {
+    public var animal: SexagenaryAnimal?
+    
+    let records: ZodiacRecords
+    
+    public init(birthday: String) throws {
+        self.records = try ZodiacRecords()
+        self.animal = try records.animalWith(birthday: birthday)
+    }
+}
+
+internal struct ZodiacRecords {
+    let animals: [SexagenaryAnimal]
+    
+    init() throws {
+        let records: [WikipediaLine] = JSONFileReader().load()
+        self.animals = try Transmogrifier(records).animals
+    }
+    
+    func animalWith(birthday: String) throws -> SexagenaryAnimal {
+        // do work
+        
+        return animal
+    }
+    
+    fileprivate func contains(date: Date) -> SexagenaryAnimal? {
+        // ...
+        }
+    }
+}
+
+```
+
+
 
 
 ## Design Decisions

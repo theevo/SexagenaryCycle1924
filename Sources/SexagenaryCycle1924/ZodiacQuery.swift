@@ -8,7 +8,7 @@
 import Foundation
 
 public struct ZodiacQuery {
-    public var animal: SexagenaryAnimal?
+    public var animal: SexagenaryAnimal
     
     let records: ZodiacRecords
     
