@@ -14,7 +14,7 @@ public struct ZodiacQuery {
     
     public init(birthday: String) throws {
         let records: [WikipediaLine] = JSONFileReader().load()
-        self.animals = try! Transmogrifier(records).animals
+        self.animals = try Transmogrifier(records).animals
         
         self.animal = try animalWith(birthday: birthday)
     }
