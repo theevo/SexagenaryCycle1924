@@ -21,8 +21,12 @@ public struct Transmogrifier {
             
             let ranges = try buildDateRangesFrom(wikiLine: line)
             
+            guard let animal = SexagenaryAnimal.Name(rawValue: line.animal) else {
+                fatalError("could not find \(line.animal)")
+            }
+            
             return SexagenaryAnimal(
-                name: line.animal,
+                name: animal,
                 element: line.element,
                 heavenlyStem: line.heavenlyStem,
                 earthlyBranch: line.earthlyBranch,

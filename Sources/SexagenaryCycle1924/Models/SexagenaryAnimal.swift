@@ -8,7 +8,7 @@
 import Foundation
 
 public struct SexagenaryAnimal {
-    public var name: String
+    public var name: Name
     public var element: String
     public var heavenlyStem: String
     public var earthlyBranch: String
@@ -17,6 +17,23 @@ public struct SexagenaryAnimal {
     public struct DateRange {
         public var start: Date
         public var end: Date
+    }
+}
+
+extension SexagenaryAnimal {
+    public enum Name: String {
+        case Rat
+        case Ox
+        case Tiger
+        case Rabbit
+        case Dragon
+        case Snake
+        case Horse
+        case Goat
+        case Monkey
+        case Rooster
+        case Dog
+        case Pig
     }
 }
 
