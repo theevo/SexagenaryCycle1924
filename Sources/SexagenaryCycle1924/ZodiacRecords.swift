@@ -30,12 +30,38 @@ internal struct ZodiacRecords {
     
     func compatibleSignsWith(animal: SexagenaryAnimal) -> [SexagenaryAnimal.Name] {
         switch animal.name {
+            
+            // correct
+        case .Rat:
+            return [.Rat, .Ox, .Dragon, .Monkey]
+        case .Ox:
+            return [.Rat, .Rooster, .Snake]
+        case .Tiger:
+            return [.Dog, .Horse, .Pig]
+            
+            // NOT CORRECT
+        case .Rabbit:
+            return [.Dog, .Goat, .Tiger]
+        case .Dragon:
+            return [.Goat, .Rabbit, .Horse, .Pig]
+        case .Snake:
+            return [.Dog, .Goat, .Tiger]
         case .Goat:
             return [.Goat, .Rabbit, .Horse, .Pig]
+            
+            // correct
         case .Horse:
             return [.Dog, .Goat, .Tiger]
-        default:
-            return []
+        case .Monkey:
+            return [.Goat, .Rabbit, .Horse, .Pig]
+            
+            // NOT CORRECT
+        case .Rooster:
+            return [.Dog, .Goat, .Tiger]
+        case .Dog:
+            return [.Goat, .Rabbit, .Horse, .Pig]
+        case .Pig:
+            return [.Dog, .Goat, .Tiger]
         }
     }
     
