@@ -24,6 +24,12 @@ public struct Transmogrifier {
         return jsonData
     }
     
+    public func jsonString() -> String {
+        let jsonData = json()
+        guard let convertedString = String(data: jsonData, encoding: .utf8) else { return "" }
+        return convertedString
+    }
+    
     private mutating func mapAnimals() throws {
         animals = try wikipedia.map({ line in
             

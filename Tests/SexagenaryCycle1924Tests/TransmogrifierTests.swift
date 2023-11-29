@@ -105,6 +105,12 @@ final class TransmogrifierTests: XCTestCase {
         XCTAssertEqual(animals.count, 60)
     }
     
+    func test_jsonString_isNotEmpty() throws {
+        let sut = try buildSUT()
+        let jsonString = sut.jsonString()
+        XCTAssertTrue(jsonString.notEmpty)
+    }
+    
     // MARK: - Helpers
     
     fileprivate func buildSUT() throws -> Transmogrifier {
