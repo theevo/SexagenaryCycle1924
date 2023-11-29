@@ -17,7 +17,10 @@ public struct Transmogrifier {
     }
     
     public func json() -> Data {
-        guard let jsonData = try? JSONEncoder().encode(animals)
+        let encoder = JSONEncoder()
+        encoder.dateEncodingStrategy = .formatted(DateFormatter.inUTCTimeZone())
+        
+        guard let jsonData = try? encoder.encode(animals)
         else {
             fatalError("failed to make JSON data")
         }

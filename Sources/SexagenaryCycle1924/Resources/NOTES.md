@@ -2,6 +2,79 @@
 
 ## Questions
 
+### How to re-order of the properties of the JSON data?
+
+Why can't `name` be first?
+
+```json
+[
+    {
+        "heavenlyStem": "甲",
+        "dates":
+        [
+            {
+                "start": "1924-02-05",
+                "end": "1925-01-23"
+            },
+            {
+                "start": "1984-02-02",
+                "end": "1985-02-19"
+            }
+        ],
+        "name": "Rat",
+        "element": "Yang Wood",
+        "earthlyBranch": "子"
+    },
+    {
+        "heavenlyStem": "乙",
+        "dates":
+        [
+            {
+                "start": "1925-01-24",
+                "end": "1926-02-12"
+            },
+            {
+                "start": "1985-02-20",
+                "end": "1986-02-08"
+            }
+        ],
+        "name": "Ox",
+        "element": "Yin Wood",
+        "earthlyBranch": "丑"
+    },
+```
+
+My Swift model is like this
+
+```swift
+public struct SexagenaryAnimal: Encodable {
+    public var name: Name
+    public var element: String
+    public var heavenlyStem: String
+    public var earthlyBranch: String
+    public var dates: [DateRange]
+    
+    public struct DateRange: Encodable {
+        public var start: Date
+        public var end: Date
+    }
+}
+```
+
+### Encoding a Swift object into JSON gives me weird looking dates
+
+Set the `dateEncodingStrategy` property in your JSON Encoder.
+
+```swift
+let encoder = JSONEncoder()
+let formatter = DateFormatter()
+formatter.dateStyle = .full
+formatter.timeStyle = .full
+encoder.dateEncodingStrategy = .formatted(formatter) // note the .formatted()
+```
+
+https://www.hackingwithswift.com/example-code/language/how-to-specify-your-own-date-format-with-codable-and-jsonencoder 
+
 ### How do you call a method during init?
 
 ```swift
