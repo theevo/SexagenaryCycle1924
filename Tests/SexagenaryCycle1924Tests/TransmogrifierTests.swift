@@ -92,6 +92,13 @@ final class TransmogrifierTests: XCTestCase {
         XCTAssertEqual(first.dates.count, 2)
     }
     
+    func test_json_containsJSON() throws {
+        let lines: [WikipediaLine] = JSONFileReader().decode(string: jsonSample())
+        let transmog = try Transmogrifier(lines)
+        let sut = transmog.json()
+        try assertJSONisValid(data: sut)
+    }
+    
     // MARK: - Helpers
     
     fileprivate func buildSUT() throws -> Transmogrifier {
@@ -103,6 +110,11 @@ final class TransmogrifierTests: XCTestCase {
         let formatter = DateFormatter.inUTCTimeZone()
         guard let date = formatter.date(from: str) else { fatalError() }
         return date
+    }
+    
+    fileprivate func assertJSONisValid(data: Data, file: StaticString = #filePath, line: UInt = #line) throws {
+        XCTAssertNoThrow(try JSONSerialization.jsonObject(with: data), file: file,
+                         line: line)
     }
     
     fileprivate func jsonSample() -> String {

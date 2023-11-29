@@ -16,6 +16,15 @@ public struct Transmogrifier {
         try mapAnimals()
     }
     
+    public func json() -> Data {
+        let jsonString = "{}"
+        guard let jsonData = jsonString.data(using: String.Encoding.utf8)
+        else {
+            fatalError("failed to make JSON data")
+        }
+        return jsonData
+    }
+    
     private mutating func mapAnimals() throws {
         animals = try wikipedia.map({ line in
             
