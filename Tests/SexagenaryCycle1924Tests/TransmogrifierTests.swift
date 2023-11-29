@@ -93,10 +93,9 @@ final class TransmogrifierTests: XCTestCase {
     }
     
     func test_json_containsJSON() throws {
-        let lines: [WikipediaLine] = JSONFileReader().decode(string: jsonSample())
-        let transmog = try Transmogrifier(lines)
-        let sut = transmog.json()
-        try assertJSONisValid(data: sut)
+        let sut = try buildSUT()
+        let jsonData = sut.json()
+        try assertJSONisValid(data: jsonData)
     }
     
     func test_json_contains60Elements() throws {
