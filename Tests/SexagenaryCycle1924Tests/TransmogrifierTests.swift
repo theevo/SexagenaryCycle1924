@@ -111,11 +111,16 @@ final class TransmogrifierTests: XCTestCase {
         XCTAssertTrue(jsonString.notEmpty)
     }
     
-    func test_jsonString_hasReadableDates() throws {
+    func test_jsonString_hasISO8601Dates() throws {
         let sut = try buildSUT()
         let jsonString = sut.jsonString()
-        XCTAssertFalse(jsonString.contains("\"start\":-1702339200"))
-        XCTAssertTrue(jsonString.contains("\"start\":\"1949-01-29\""))
+        XCTAssertTrue(jsonString.contains("1949-01-29"))
+    }
+    
+    func test_jsonString_hasNewlines() throws {
+        let sut = try buildSUT()
+        let jsonString = sut.jsonString()
+        XCTAssertTrue(jsonString.contains(where: \.isNewline))
     }
     
     // MARK: - Helpers

@@ -18,7 +18,8 @@ public struct Transmogrifier {
     
     public func json() -> Data {
         let encoder = JSONEncoder()
-        encoder.dateEncodingStrategy = .formatted(DateFormatter.inUTCTimeZone())
+        encoder.dateEncodingStrategy = .iso8601
+        encoder.outputFormatting = .prettyPrinted
         
         guard let jsonData = try? encoder.encode(animals)
         else {
