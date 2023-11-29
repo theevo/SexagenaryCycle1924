@@ -7,21 +7,21 @@
 
 import Foundation
 
-public struct SexagenaryAnimal {
+public struct SexagenaryAnimal: Codable {
     public var name: Name
     public var element: String
     public var heavenlyStem: String
     public var earthlyBranch: String
     public var dates: [DateRange]
     
-    public struct DateRange {
+    public struct DateRange: Codable {
         public var start: Date
         public var end: Date
     }
 }
 
 extension SexagenaryAnimal {
-    public enum Name: String {
+    public enum Name: String, Codable {
         case Rat
         case Ox
         case Tiger

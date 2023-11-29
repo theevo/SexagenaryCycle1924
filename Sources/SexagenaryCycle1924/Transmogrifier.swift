@@ -17,8 +17,7 @@ public struct Transmogrifier {
     }
     
     public func json() -> Data {
-        let jsonString = "{}"
-        guard let jsonData = jsonString.data(using: String.Encoding.utf8)
+        guard let jsonData = try? JSONEncoder().encode(animals)
         else {
             fatalError("failed to make JSON data")
         }

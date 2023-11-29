@@ -99,6 +99,13 @@ final class TransmogrifierTests: XCTestCase {
         try assertJSONisValid(data: sut)
     }
     
+    func test_json_contains60Elements() throws {
+        let sut = try buildSUT()
+        let jsonData = sut.json()
+        let animals: [SexagenaryAnimal] = decode(data: jsonData)
+        XCTAssertEqual(animals.count, 60)
+    }
+    
     // MARK: - Helpers
     
     fileprivate func buildSUT() throws -> Transmogrifier {
@@ -115,6 +122,15 @@ final class TransmogrifierTests: XCTestCase {
     fileprivate func assertJSONisValid(data: Data, file: StaticString = #filePath, line: UInt = #line) throws {
         XCTAssertNoThrow(try JSONSerialization.jsonObject(with: data), file: file,
                          line: line)
+    }
+    
+    fileprivate func decode<T: Decodable>(data: Data) -> T {
+        do {
+            let decoder = JSONDecoder()
+            return try decoder.decode(T.self, from: data)
+        } catch {
+            fatalError("Couldn't parse data as \(T.self):\n\(error)")
+        }
     }
     
     fileprivate func jsonSample() -> String {
