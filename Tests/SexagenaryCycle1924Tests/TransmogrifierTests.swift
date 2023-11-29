@@ -101,7 +101,7 @@ final class TransmogrifierTests: XCTestCase {
     func test_json_contains60Elements() throws {
         let sut = try buildSUT()
         let jsonData = sut.json()
-        let animals: [SexagenaryAnimal] = decode(data: jsonData)
+        let animals: [MockAnimal] = decode(data: jsonData)
         XCTAssertEqual(animals.count, 60)
     }
     
@@ -210,5 +210,18 @@ final class TransmogrifierTests: XCTestCase {
     
     fileprivate func jsonSampleEmpty() -> String {
         return "[]"
+    }
+}
+
+fileprivate struct MockAnimal: Decodable {
+    var name: String
+    var element: String
+    var heavenlyStem: String
+    var earthlyBranch: String
+    var dates: [DateRange]
+    
+    struct DateRange: Decodable {
+        var start: String
+        var end: String
     }
 }
