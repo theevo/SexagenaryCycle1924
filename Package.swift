@@ -23,5 +23,15 @@ let package = Package(
         .testTarget(
             name: "SexagenaryCycle1924Tests",
             dependencies: ["SexagenaryCycle1924"]),
+        .target(
+            name: "JSONFilePublisher",
+            dependencies: ["SexagenaryCycle1924"],
+            resources: [
+                .copy("Resources/Wikipedia-Sexagenary-cycle.json"),
+            ]
+        ),
+        .testTarget(
+            name: "JSONFilePublisherTests",
+            dependencies: ["JSONFilePublisher"]),
     ]
 )
