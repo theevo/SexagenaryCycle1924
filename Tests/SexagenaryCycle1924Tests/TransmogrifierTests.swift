@@ -56,7 +56,7 @@ final class TransmogrifierTests: XCTestCase {
     }
     
     func test_badDate_throwsError() {
-        let lines: [WikipediaLine] = JSONFileReader().decode(string: jsonSampleBad())
+        let lines: [WikipediaLine] = JSONFileReader().decode(string: jsonWithInvalidDate())
         var thrownError: Error?
         
         XCTAssertThrowsError(try Transmogrifier(lines)) {
@@ -185,7 +185,7 @@ final class TransmogrifierTests: XCTestCase {
 """
     }
     
-    fileprivate func jsonSampleBad() -> String {
+    fileprivate func jsonWithInvalidDate() -> String {
         return
 """
 [
