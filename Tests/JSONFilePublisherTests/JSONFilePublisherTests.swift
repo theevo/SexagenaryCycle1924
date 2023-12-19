@@ -10,9 +10,8 @@ import JSONFilePublisher
 
 final class JSONFilePublisherTests: XCTestCase {
     
-    func test_init_loadsLines() {
-        let sut = JSONFilePublisher()
-        XCTAssertTrue(sut.lines.notEmpty)
+    func test_init_json_isNotEmpty() throws {
+        let sut = try JSONFilePublisher()
+        XCTAssertTrue(sut.json.notEmpty)
     }
-
 }

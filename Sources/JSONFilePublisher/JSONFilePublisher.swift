@@ -9,10 +9,11 @@ import Foundation
 import SexagenaryCycle1924
 
 public struct JSONFilePublisher {
-    public var lines: [WikipediaLine]
+    public var json: String
     
-    public init() {
+    public init() throws {
         let lines: [WikipediaLine] = JSONFileReader().load()
-        self.lines = lines
+        let transmogrifier = try Transmogrifier(lines)
+        self.json = transmogrifier.jsonString()
     }
 }
