@@ -12,6 +12,10 @@ public struct Transmogrifier {
     public var animals: [SexagenaryAnimal] = []
     
     public init(_ wikipediaLines: [WikipediaLine]) throws {
+        guard wikipediaLines.notEmpty else {
+            throw TransmogrifierError.initWithEmptyLines
+        }
+        
         self.wikipedia = wikipediaLines
         try mapAnimals()
     }
@@ -89,10 +93,13 @@ extension Transmogrifier {
 
 extension Transmogrifier {
     public enum TransmogrifierError: LocalizedError, Equatable {
+        case initWithEmptyLines
         case failedToParseDate(String)
         
         public var errorDescription: String? {
             switch self {
+            case .initWithEmptyLines:
+                return "How dare you initialize me with an empty parameter."
             case .failedToParseDate(let str):
                 return "Could not parse date: \(str)"
             }

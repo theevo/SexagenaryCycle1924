@@ -92,6 +92,27 @@ final class TransmogrifierTests: XCTestCase {
         XCTAssertEqual(first.dates.count, 2)
     }
     
+    func test_emptyJSON_throwsError_initWithEmptyLines() {
+        let lines: [WikipediaLine] = JSONFileReader().decode(string: jsonSampleEmpty())
+        var thrownError: Error?
+        
+        XCTAssertThrowsError(try Transmogrifier(lines)) {
+            thrownError = $0
+        }
+        
+        guard let localError = thrownError as? Transmogrifier.TransmogrifierError else {
+            XCTFail("Unexpected error type: \(type(of: thrownError))")
+            return
+        }
+        
+        guard case .initWithEmptyLines = localError else {
+            XCTFail("Expected \"initWithEmptyLines\" error, but was \(localError) instead.")
+            return
+        }
+        
+        XCTAssertTrue(true)
+    }
+    
     func test_json_containsJSON() throws {
         let sut = try buildSUT()
         let jsonData = sut.json()
