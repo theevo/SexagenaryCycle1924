@@ -10,6 +10,12 @@ let package = Package(
         .library(
             name: "SexagenaryCycle1924",
             targets: ["SexagenaryCycle1924"]),
+        .executable(
+            name: "jsonPublisher",
+            targets: ["JSONFilePublisher"])
+    ],
+    dependencies: [
+        .package(url: "https://github.com/apple/swift-argument-parser.git", from: "1.2.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package, defining a module or a test suite.
@@ -23,10 +29,12 @@ let package = Package(
         .testTarget(
             name: "SexagenaryCycle1924Tests",
             dependencies: ["SexagenaryCycle1924"]),
-        .target(
+        .executableTarget(
             name: "JSONFilePublisher",
-            dependencies: ["SexagenaryCycle1924"]
-        ),
+            dependencies: [
+                "SexagenaryCycle1924",
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
+            ]),
         .testTarget(
             name: "JSONFilePublisherTests",
             dependencies: ["JSONFilePublisher"]),

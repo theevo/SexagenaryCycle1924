@@ -11,7 +11,7 @@ import JSONFilePublisher
 final class JSONFilePublisherTests: XCTestCase {
     
     func test_init_json_isNotEmpty() throws {
-        let sut = try JSONFilePublisher()
+        let sut = try TransmogrifierBuilder()
         XCTAssertTrue(sut.json.notEmpty)
     }
 }
