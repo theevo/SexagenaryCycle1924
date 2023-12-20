@@ -25,10 +25,7 @@ let package = Package(
             dependencies: ["SexagenaryCycle1924"]),
         .target(
             name: "JSONFilePublisher",
-            dependencies: ["SexagenaryCycle1924"],
-            resources: [
-                .copy("Resources/Wikipedia-Sexagenary-cycle.json"),
-            ]
+            dependencies: ["SexagenaryCycle1924"]
         ),
         .testTarget(
             name: "JSONFilePublisherTests",
