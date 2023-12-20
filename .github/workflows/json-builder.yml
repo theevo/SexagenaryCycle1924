@@ -1,0 +1,27 @@
+# This workflow will create a json file containing the Chinese zodiac dates of 120 years (or 2 Sexagenary Cycles) from 1924 - 2043.
+# For more information see: https://github.com/theevo/SexagenaryCycle1924
+
+name: Swift
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  update-lyrics:
+
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Build
+      run: swift build -v
+    - name: Write to file
+      run: swift run jsonBuilder > sexagenary1924to2043.json
+    # commit the updated sexagenary1924to2043.json
+    - uses: stefanzweifel/git-auto-commit-action@v5
+      with:
+        file_pattern: 'sexagenary1924to2043.json'
+        commit_message: Update json
