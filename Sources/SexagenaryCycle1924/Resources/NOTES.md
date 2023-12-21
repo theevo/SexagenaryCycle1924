@@ -6,6 +6,15 @@
 
 Why can't `name` be first?
 
+A: Order should not matter. Any proper JSON decoder will not have an issue with the order in which the properties are serialized. 
+
+https://developer.apple.com/forums/thread/83511?answerId=248330022#248330022 
+
+`JSONEncoder` does allow ordering, but in lexicographical order only.
+
+https://developer.apple.com/documentation/foundation/jsonencoder/outputformatting
+
+
 ```json
 [
     {
