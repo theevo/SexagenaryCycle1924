@@ -30,7 +30,7 @@ Pass your birthday as a String (format: MM-DD-YYYY) as a paramter to the `Zodiac
 import SexagenaryCycle1924
 
 let query = try! ZodiacQuery(birthday: "11-26-1978")
-printy(query.animal) // ".Horse"
+print(query.animal) // ".Horse"
 ```
 
 ### Other properties
