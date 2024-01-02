@@ -26,7 +26,7 @@ final class TransmogrifierTests: XCTestCase {
     func test_init_firstRecordStartDateBefore1983_isCorrect() throws {
         let sut = try buildSUT()
         
-        let expectedDate = chineseDate(from: "1924-02-05")
+        let expectedDate = utcDate(from: "1924-02-05")
         
         XCTAssertEqual(sut.animals.first?.dates[0].start, expectedDate)
     }
@@ -34,7 +34,7 @@ final class TransmogrifierTests: XCTestCase {
     func test_init_firstRecordEndDateBefore1983_isCorrect() throws {
         let sut = try buildSUT()
                 
-        let expectedDate = chineseDate(from: "1925-01-23")
+        let expectedDate = utcDate(from: "1925-01-23")
         
         XCTAssertEqual(sut.animals.first?.dates[0].end, expectedDate)
     }
@@ -42,7 +42,7 @@ final class TransmogrifierTests: XCTestCase {
     func test_init_firstRecordStartDateAfter1984_isCorrect() throws {
         let sut = try buildSUT()
         
-        let expectedDate = chineseDate(from: "1984-02-02")
+        let expectedDate = utcDate(from: "1984-02-02")
         
         XCTAssertEqual(sut.animals.first?.dates[1].start, expectedDate)
     }
@@ -50,7 +50,7 @@ final class TransmogrifierTests: XCTestCase {
     func test_init_firstRecordEndDateAfter1984_isCorrect() throws {
         let sut = try buildSUT()
         
-        let expectedDate = chineseDate(from: "1985-02-19")
+        let expectedDate = utcDate(from: "1985-02-19")
         
         XCTAssertEqual(sut.animals.first?.dates[1].end, expectedDate)
     }
@@ -151,7 +151,7 @@ final class TransmogrifierTests: XCTestCase {
         return try Transmogrifier(records)
     }
     
-    fileprivate func chineseDate(from str: String) -> Date {
+    fileprivate func utcDate(from str: String) -> Date {
         let formatter = DateFormatter.inUTCTimeZone()
         guard let date = formatter.date(from: str) else { fatalError() }
         return date
