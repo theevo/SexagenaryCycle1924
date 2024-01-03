@@ -52,6 +52,10 @@ public struct SexagenaryAnimal: Encodable {
 }
 ```
 
+### What's the executable for?
+
+The Swift Package contains 1 executable and 1 library. Swift devs will just add the library. The executable is only there to help GitHub Actions build the JSON file.
+
 ## JSON file
 
 ### Get the file
