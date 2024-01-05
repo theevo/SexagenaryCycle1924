@@ -7,7 +7,7 @@
 
 import Foundation
 
-internal struct ZodiacRecords {
+public struct ZodiacRecords {
     let animals: [SexagenaryAnimal]
     
     init() throws {
@@ -36,7 +36,7 @@ internal struct ZodiacRecords {
 }
 
 extension ZodiacRecords {
-    enum Error: LocalizedError {
+    public enum Error: LocalizedError {
         case invalidBirthdayInputString(date: String)
         case noAnimalFoundWithThatBirthday(date: String)
         

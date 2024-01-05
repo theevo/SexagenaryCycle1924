@@ -47,4 +47,24 @@ final class ZodiacQueryTests: XCTestCase {
         XCTAssertEqual(animal.name, .Tiger)
         XCTAssertEqual(animal.element, "Yang Wood")
     }
+    
+    func test_whenBirthday01_01_1900_returnsError() throws {
+        var thrownError: Error?
+        
+        XCTAssertThrowsError(try ZodiacQuery(birthday: "01-01-1900")) {
+            thrownError = $0
+        }
+        
+        guard let localError = thrownError as? ZodiacRecords.Error else {
+            XCTFail("Unexpected error type: \(type(of: thrownError))")
+            return
+        }
+        
+        guard case .noAnimalFoundWithThatBirthday(_) = localError else {
+            XCTFail("Expected \"noAnimalFoundWithThatBirthday\" error, but was \(localError) instead.")
+            return
+        }
+        
+        XCTAssertTrue(true)
+    }
 }
