@@ -67,4 +67,44 @@ final class ZodiacQueryTests: XCTestCase {
         
         XCTAssertTrue(true)
     }
+    
+    func test_whenBirthday01_01_2100_returnsError() throws {
+        var thrownError: Error?
+        
+        XCTAssertThrowsError(try ZodiacQuery(birthday: "01-01-2100")) {
+            thrownError = $0
+        }
+        
+        guard let localError = thrownError as? ZodiacRecords.Error else {
+            XCTFail("Unexpected error type: \(type(of: thrownError))")
+            return
+        }
+        
+        guard case .noAnimalFoundWithThatBirthday(_) = localError else {
+            XCTFail("Expected \"noAnimalFoundWithThatBirthday\" error, but was \(localError) instead.")
+            return
+        }
+        
+        XCTAssertTrue(true)
+    }
+    
+    func test_whenBirthdayIsGarbage_returnsError() throws {
+        var thrownError: Error?
+        
+        XCTAssertThrowsError(try ZodiacQuery(birthday: "2782819")) {
+            thrownError = $0
+        }
+        
+        guard let localError = thrownError as? ZodiacRecords.Error else {
+            XCTFail("Unexpected error type: \(type(of: thrownError))")
+            return
+        }
+        
+        guard case .invalidBirthdayInputString(_) = localError else {
+            XCTFail("Expected \"invalidBirthdayInputString\" error, but was \(localError) instead.")
+            return
+        }
+        
+        XCTAssertTrue(true)
+    }
 }
