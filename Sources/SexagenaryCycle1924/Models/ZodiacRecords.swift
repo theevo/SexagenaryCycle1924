@@ -28,6 +28,16 @@ public struct ZodiacRecords {
         return animal
     }
     
+    func animalWith(date: Date) throws -> SexagenaryAnimal {
+        let birthday = date.description
+        
+        guard let animal = contains(date: date) else {
+            throw Error.noAnimalFoundWithThatBirthday(date: birthday)
+        }
+        
+        return animal
+    }
+    
     fileprivate func contains(date: Date) -> SexagenaryAnimal? {
         return animals.first { animal in
             animal.contains(date: date)

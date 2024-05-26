@@ -19,6 +19,6 @@ public struct ZodiacQuery {
     
     public init(date: Date) throws {
         self.records = try ZodiacRecords()
-        self.animal = SexagenaryAnimal(name: .Dragon, element: "", heavenlyStem: "", earthlyBranch: "", dates: [])
+        self.animal = try records.animalWith(date: date)
     }
 }
