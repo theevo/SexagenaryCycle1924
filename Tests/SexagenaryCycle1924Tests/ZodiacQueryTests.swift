@@ -124,6 +124,28 @@ final class ZodiacQueryTests: XCTestCase {
         XCTAssertEqual(animal.name, .Rabbit)
     }
     
+    func test_whenSwiftDateIs_3000_05_25_ThrowsError() throws {
+        let date = makeDate(month: "05", day: "25", year: "3000")
+        
+        var thrownError: Error?
+        
+        XCTAssertThrowsError(try ZodiacQuery(date: date)) {
+            thrownError = $0
+        }
+        
+        guard let localError = thrownError as? ZodiacRecords.Error else {
+            XCTFail("Unexpected error type: \(type(of: thrownError))")
+            return
+        }
+        
+        guard case .noAnimalFoundWithThatBirthday(_) = localError else {
+            XCTFail("Expected \"noAnimalFoundWithThatBirthday\" error, but was \(localError) instead.")
+            return
+        }
+        
+        XCTAssertTrue(true)
+    }
+    
     // MARK: - Helpers
     
     func makeDate(month: String, day: String, year: String) -> Date {
