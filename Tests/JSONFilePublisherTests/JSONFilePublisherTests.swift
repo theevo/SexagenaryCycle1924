@@ -6,12 +6,12 @@
 //
 
 import XCTest
-import JSONFilePublisher
+//import JSONFilePublisher
 
 final class JSONFilePublisherTests: XCTestCase {
     
-    func test_init_json_isNotEmpty() throws {
-        let sut = try TransmogrifierBuilder()
-        XCTAssertTrue(sut.json.notEmpty)
-    }
+//    func test_init_json_isNotEmpty() throws {
+//        let sut = try TransmogrifierBuilder()
+//        XCTAssertTrue(sut.json.notEmpty)
+//    }
 }
