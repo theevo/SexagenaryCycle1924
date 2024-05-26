@@ -111,10 +111,22 @@ final class ZodiacQueryTests: XCTestCase {
     // MARK: - Using Swift Date
     
     func test_whenSwiftDateIs_2024_05_25_AnimalIsDragon() throws {
-        let date = Date()
+        let date = makeDate(month: "05", day: "25", year: "2024")
         let query = try ZodiacQuery(date: date)
         let animal = query.animal
         XCTAssertEqual(animal.name, .Dragon)
     }
     
+    // MARK: - Helpers
+    
+    func makeDate(month: String, day: String, year: String) -> Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let someDateTime = formatter.date(from: "\(year)/\(month)/\(day) 12:00")
+        
+        guard let date = someDateTime else {
+            fatalError("Expected this string to generate a valid date, but it failed: \(year)/\(month)/\(day)")
+        }
+        return date
+    }
 }
