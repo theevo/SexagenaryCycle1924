@@ -107,4 +107,14 @@ final class ZodiacQueryTests: XCTestCase {
         
         XCTAssertTrue(true)
     }
+    
+    // MARK: - Using Swift Date
+    
+    func test_whenSwiftDateIs_2024_05_25_AnimalIsDragon() throws {
+        let date = Date()
+        let query = try ZodiacQuery(date: date)
+        let animal = query.animal
+        XCTAssertEqual(animal.name, .Dragon)
+    }
+    
 }
