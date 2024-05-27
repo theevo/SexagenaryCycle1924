@@ -234,3 +234,60 @@ Utilizing the JSON of the source, this package will have a method that can gener
 If you feel I'm not living up to the mission of this project or you have other queries, please [contact me](https://iosdev.space/@theevo).
 
 Theo Vora: [Mastodon](https://iosdev.space/@theevo)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## For the Time Lords
+
+### What time zone do you use?
+
+All times in the JSON file as well as the `ZodiacRecords.animals` are set to GMT+0 00:00.
+
+As a natural consequence, it becomes necessary to perform time zone conversions before a query is executed and whenever presenting date ranges to the user.
+
+### Why not use China time zone?
+
+My original plan was to do exactly that. What better way to ensure ultimate accuracy?
+
+Upon building this package, the simple answer is I do not see the value in it, so I abandonded that effort.
+
+The specific value-add adding Chinese time zone would serve the `<1%` (my guess) of the population that happened to be born on the _eve of a lunar new year day_.
+
+This would require 2 things to be answered before I would re-entertain the idea.
+
+The first: users would have to provide their time of birth. I think most users don't care. Again, it doesn't come into play unless given the lunar new year eve scenario above. Prove me otherwise, and we'll talk.
+
+The second: If it's Lunar New Year day in China, and a person was born on the _Eve_ of lunar new year, which animal are they assigned? If you know the answer, please get in touch.
