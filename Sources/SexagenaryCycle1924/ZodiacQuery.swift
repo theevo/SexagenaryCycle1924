@@ -34,31 +34,36 @@ extension ZodiacQuery {
         animal.range(date: date)
     }
     
-    public var prettyPrintRange: String {
-        "\(range?.start.shortie(secondsFromGMT: secondsFromGMT) ?? "?") - \(range?.end.shortie(secondsFromGMT: secondsFromGMT) ?? "?")"
+    public func prettyPrintRange(dateStyle: DateFormatter.Style = .medium) -> String {
+        "\(dateString(date: range?.start, dateStyle: dateStyle)) - \(dateString(date: range?.end, dateStyle: dateStyle))"
+    }
+    
+    func dateString(date: Date?, dateStyle: DateFormatter.Style = .medium) -> String {
+        "\(date?.printInTimeZone(secondsFromGMT: secondsFromGMT, dateStyle: dateStyle) ?? "?")"
     }
 }
 
 extension Date {
-    func shortie(secondsFromGMT: Int) -> String {
-        // shift date to user's local time zone
-        let newString = self.timeKiller(secondsFromGMT: 0)
-        let formatter0 = DateFormatter()
-        formatter0.dateFormat = "MM-dd-yyyy"
-        formatter0.timeZone = TimeZone(secondsFromGMT: secondsFromGMT)
-        guard let newDate = formatter0.date(from: newString) else {
+    func printInTimeZone(secondsFromGMT: Int, dateStyle: DateFormatter.Style = .medium) -> String {
+        guard let newDate = self.shiftDateToTimeZone(secondsFromGMT: secondsFromGMT) else {
             return ""
         }
         
         // present the date in medium style (ex: Feb 9, 2024)
         let formatter = DateFormatter()
-        formatter.dateStyle = .medium
+        formatter.dateStyle = dateStyle
         formatter.timeZone = TimeZone(secondsFromGMT: secondsFromGMT)
         return formatter.string(from: newDate)
     }
-}
-
-extension Date {
+    
+    public func shiftDateToTimeZone(secondsFromGMT: Int) -> Date? {
+        let newString = self.timeKiller(secondsFromGMT: 0)
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM-dd-yyyy"
+        formatter.timeZone = TimeZone(secondsFromGMT: secondsFromGMT)
+        return formatter.date(from: newString)
+    }
+    
     public func timeKiller(secondsFromGMT: Int) -> String {
         let usersIntendedDateFormatter = DateFormatter()
         usersIntendedDateFormatter.dateFormat = "MM-dd-yyyy"

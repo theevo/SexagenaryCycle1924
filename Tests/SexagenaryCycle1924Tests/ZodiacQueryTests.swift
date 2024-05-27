@@ -172,7 +172,7 @@ final class ZodiacQueryTests: XCTestCase {
     func test_whenSwiftDateIs_2024_02_09_RangeIs_Jan222023_to_Feb092024() throws {
         let date = makeDate(month: "02", day: "09", year: "2024")
         let query = try ZodiacQuery(date: date, secondsFromGMT: -18000)
-        XCTAssertEqual(query.prettyPrintRange, "Jan 22, 2023 - Feb 9, 2024")
+        XCTAssertEqual(query.prettyPrintRange(), "Jan 22, 2023 - Feb 9, 2024")
     }
     
     // MARK: - Helpers
