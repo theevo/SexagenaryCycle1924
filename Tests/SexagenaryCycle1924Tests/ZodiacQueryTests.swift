@@ -146,12 +146,20 @@ final class ZodiacQueryTests: XCTestCase {
         XCTAssertTrue(true)
     }
     
-    func testTimeKiller() throws {
+    func testTimeKiller_2023_05_25_22_00_CDT_returns_05_25_2023() {
         let date = makeDate(month: "05", day: "25", year: "2023")
         
         let string = date.timeKiller(secondsFromGMT: -18000)
         
         XCTAssertEqual(string, "05-25-2023")
+    }
+    
+    func testTimeKiller_2024_02_09_11_53_CDT_returns_02_09_2024() {
+        let date = makeDate(month: "02", day: "09", year: "2024", time: "11:53", secondsFromGMT: -18000)
+        
+        let string = date.timeKiller(secondsFromGMT: -18000)
+        
+        XCTAssertEqual(string, "02-09-2024")
     }
     
     func test_whenSwiftDateIs_2024_02_09_AnimalIsRabbit() throws {
