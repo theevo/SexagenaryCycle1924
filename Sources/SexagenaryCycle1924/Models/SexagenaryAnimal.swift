@@ -43,11 +43,25 @@ extension SexagenaryAnimal {
             range.contains(date: date)
         }
     }
+    
+    public func range(date: Date) -> SexagenaryAnimal.DateRange? {
+        dates.first { range in
+            range.contains(date: date)
+        }
+    }
 }
 
 extension SexagenaryAnimal.DateRange {
     public func contains(date: Date) -> Bool {
         let range = start...end
         return range.contains(date)
+    }
+}
+
+
+
+extension SexagenaryAnimal.DateRange: CustomStringConvertible {
+    public var description: String {
+        "SexagenaryAnimal.DateRange: \(start.description) - \(end.description)"
     }
 }
