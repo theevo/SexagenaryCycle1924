@@ -6,33 +6,60 @@
 
 This is a Swift Package that will:
 
-1. For Swift devs: Service requests specifying a date as a parameter, responding with the Chinese zodiac's Associated element and Associated animal
+1. For Swift devs: Service requests specifying a date as a parameter, responding with the Chinese zodiac's Associated animal and Associated element
 2. For non-Swift devs: Publish a programmer-friendly JSON file containing all the data mentioned below
-
 
 ## What? Sexa-wha?
 
 A Sexagenary Cycle is a sixty-year cycle, historically used for recording time in China and the rest of the East Asian cultural sphere. The most popular use for this is to determine your [Chinese zodiac](https://en.wikipedia.org/wiki/Chinese_zodiac) sign according to your year of birth.
 
+## Where is your data from?
+
+Source: [Sexagenary cycle from Wikipedia](https://en.wikipedia.org/wiki/Chinese_zodiac#Years)
+
+The source contains 2 consecutive Sexagenary Cycles - for a total of 120 years of zodiac data:
+
+1. 1924 - 1983
+2. 1984 - 2043
+
+## Install the Package
+
+Once you've created your project in Xcode, install the package.
+
+In Xcode,
+
+1. Click File Add Package Dependencies...
+2. Paste this url into the Search field: `https://github.com/theevo/SexagenaryCycle1924`
+3. Click Add Package.
+
+### What's the executable for?
+
+The executable is only there to help GitHub Actions build the JSON file (yay for automation!).
+
+The Swift Package contains 1 executable and 1 library. Swift devs will just add the library. You do not need to add the executable to your project.
 
 ## Swift Usage
 
-### Get your animal sign
+### Import statement
 
-Pass your birthday as a String (format: MM-DD-YYYY) as a paramter to the `ZodiacQuery` initializer. 
+To make any of the given commands work, include the following import statement at the top of your swift file.
 
 ```swift
 import SexagenaryCycle1924
+```
 
+### Get your animal sign
+
+#### Pass your birthday as a String (format: MM-DD-YYYY) as a paramter to the `ZodiacQuery` initializer. 
+
+```swift
 let query = try! ZodiacQuery(birthday: "11-26-1978")
 print(query.animal.name) // ".Horse"
 ```
 
-Or query with a Swift `Date`!
+#### Or query with a Swift `Date`!
 
 ```swift
-import SexagenaryCycle1924
-
 let formatter = DateFormatter()
 formatter.dateFormat = "MM-dd-yyyy"
 formatter.timeZone = TimeZone.current
@@ -42,6 +69,16 @@ let query = try! ZodiacQuery(date: date)
 print(query.animal.name) // ".Ox"
 ```
 
+### Get the matching date range
+
+Why? The animal that is returned from your query contains an [_array_ of date ranges](#other-properties). Which range matched your particular query can be obtained with the `ZodiacQuery.prettyPrintRange()` method.
+
+The fact that there are 2 date ranges is by design, and you can read the [full explanation](#explanation) below in the section labelled JSON file.
+
+```swift
+let query = try! ZodiacQuery(birthday: "02-09-2024")
+print(query.prettyPrintRange()) // "Jan 22, 2023 - Feb 9, 2024"
+```
 
 ### Other properties
 
@@ -61,10 +98,6 @@ public struct SexagenaryAnimal: Encodable {
     }
 }
 ```
-
-### What's the executable for?
-
-The Swift Package contains 1 executable and 1 library. Swift devs will just add the library. The executable is only there to help GitHub Actions build the JSON file.
 
 ## JSON file
 
@@ -174,18 +207,6 @@ Individuals born *exactly* 60 years apart will share the same Animal *and* Eleme
 
 Rather than have an array of 120 elements (where we would be duplicating information), I decided to make `dates` an array containing the date ranges for that combination. In this file, you are guaranteed 2 date ranges for any given Animal/Element combination.
 
-
-## Where is your data from?
-
-Source: [Sexagenary cycle from Wikipedia](https://en.wikipedia.org/wiki/Chinese_zodiac#Years)
-
-The source contains 2 consecutive Sexagenary Cycles:
-
-1. 1924 - 1983
-2. 1984 - 2043
-
-The HTML table was copied and saved as a TSV file. From the TSV file, a JSON file was created as a starting point for further refinement.
-
 ## Why copy it to Github?
 
 In its current form, the Wikipedia table is not friendly to programmers.
@@ -200,8 +221,18 @@ If you saw this table, determining if your birthdate fell within the date ranges
 
 ## Transformation work
 
-The mission here is to *preserve, improve, and publish the improvements as copies*.
+The mission here is to *disseminate the available sexagenary cycle data, making it programmer-friendly while maintaining data integrity*.
+
+The HTML table was copied from [Wikipedia](https://en.wikipedia.org/wiki/Chinese_zodiac#Years) and saved as a TSV file. From the TSV file, a JSON file was created as a starting point for further refinement.
 
 With full respect to the original source material, the TSV file will be kept as close as possible to its original form - undergoing edits only in the off-chance that the data values require correction.
 
-Utilizing the JSON of the source, this package will have a method that can generate a new JSON file that contains actual *date* types (as opposed to strings in the original), making lookup of a date's zodiac animal easier.
+Utilizing the JSON of the source, this package will have a method that can generate a new JSON file that contains actual *data* types (as opposed to strings in the original), making lookup of a date's zodiac animal easier.
+
+## Contact
+
+If you feel I'm not living up to the mission of this project or you have other queries, please [contact me](https://iosdev.space/@theevo).
+
+Theo Vora
+[Mastodon](https://iosdev.space/@theevo)
+[LinkedIn](https://www.linkedin.com/in/theovora/)
