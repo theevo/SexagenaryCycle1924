@@ -34,6 +34,9 @@ extension ZodiacQuery {
         animal.range(date: date)
     }
     
+    /// Pretty print the exact date range that matched that date you fed to `init()`
+    /// - Parameter dateStyle: default value: `.medium`
+    /// - Returns: example: "Jan 22, 2023 - Feb 9, 2024"
     public func prettyPrintRange(dateStyle: DateFormatter.Style = .medium) -> String {
         "\(dateString(date: range?.start, dateStyle: dateStyle)) - \(dateString(date: range?.end, dateStyle: dateStyle))"
     }
