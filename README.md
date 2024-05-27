@@ -9,10 +9,6 @@ This is a Swift Package that will:
 1. For Swift devs: Service requests specifying a date as a parameter, responding with the Chinese zodiac's Associated element and Associated animal
 2. For non-Swift devs: Publish a programmer-friendly JSON file containing all the data mentioned below
 
-## Current status
-
-*Complete!*
-
 
 ## What? Sexa-wha?
 
@@ -26,12 +22,26 @@ A Sexagenary Cycle is a sixty-year cycle, historically used for recording time i
 Pass your birthday as a String (format: MM-DD-YYYY) as a paramter to the `ZodiacQuery` initializer. 
 
 ```swift
-
 import SexagenaryCycle1924
 
 let query = try! ZodiacQuery(birthday: "11-26-1978")
-print(query.animal) // ".Horse"
+print(query.animal.name) // ".Horse"
 ```
+
+Or query with a Swift `Date`!
+
+```swift
+import SexagenaryCycle1924
+
+let formatter = DateFormatter()
+formatter.dateFormat = "MM-dd-yyyy"
+formatter.timeZone = TimeZone.current
+let date = formatter.date(from: "10-31-1947")
+
+let query = try! ZodiacQuery(date: date)
+print(query.animal.name) // ".Ox"
+```
+
 
 ### Other properties
 
