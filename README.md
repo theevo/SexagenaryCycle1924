@@ -50,14 +50,14 @@ import SexagenaryCycle1924
 
 ### Get your animal sign
 
-#### Pass your birthday as a String (format: MM-DD-YYYY) as a paramter to the `ZodiacQuery` initializer. 
+#### Pass your birthday as a String (format: MM-DD-YYYY) as a parameter to the `ZodiacQuery` initializer. 
 
 ```swift
 let query = try! ZodiacQuery(birthday: "11-26-1978")
 print(query.animal.name) // ".Horse"
 ```
 
-#### Or query with a Swift `Date`!
+#### Or query with a Swift `Date`
 
 ```swift
 let formatter = DateFormatter()
@@ -234,5 +234,7 @@ Utilizing the JSON of the source, this package will have a method that can gener
 If you feel I'm not living up to the mission of this project or you have other queries, please [contact me](https://iosdev.space/@theevo).
 
 Theo Vora
+
 [Mastodon](https://iosdev.space/@theevo)
+
 [LinkedIn](https://www.linkedin.com/in/theovora/)
