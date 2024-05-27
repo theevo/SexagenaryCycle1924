@@ -149,7 +149,7 @@ final class ZodiacQueryTests: XCTestCase {
     func testTimeKiller() throws {
         let date = makeDate(month: "05", day: "25", year: "2023")
         
-        let string = ZodiacQuery.timeKiller(date: date, secondsFromGMT: -18000)
+        let string = date.timeKiller(secondsFromGMT: -18000)
         
         XCTAssertEqual(string, "05-25-2023")
     }
