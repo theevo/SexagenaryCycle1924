@@ -204,4 +204,4 @@ The mission here is to *preserve, improve, and publish the improvements as copie
 
 With full respect to the original source material, the TSV file will be kept as close as possible to its original form - undergoing edits only in the off-chance that the data values require correction.
 
-Utilizing the JSON of the source, this package will have a method that can generate a new JSON file that contains actual *data* types (as opposed to strings in the original), making lookup of a date's zodiac animal easier.
+Utilizing the JSON of the source, this package will have a method that can generate a new JSON file that contains actual *date* types (as opposed to strings in the original), making lookup of a date's zodiac animal easier.
