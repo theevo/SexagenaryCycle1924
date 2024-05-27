@@ -17,8 +17,18 @@ public struct ZodiacQuery {
         self.animal = try records.animalWith(birthday: birthday)
     }
     
-    public init(date: Date) throws {
-        self.records = try ZodiacRecords()
-        self.animal = try records.animalWith(date: date)
+    public init(date: Date, secondsFromGMT: Int = TimeZone.current.secondsFromGMT()) throws {
+        let birthday = ZodiacQuery.timeKiller(date: date, secondsFromGMT: secondsFromGMT)
+        try self.init(birthday: birthday)
+    }
+    
+    static func timeKiller(date: Date, secondsFromGMT: Int) -> String {
+        let usersIntendedDateFormatter = DateFormatter()
+        usersIntendedDateFormatter.dateFormat = "MM-dd-yyyy"
+        usersIntendedDateFormatter.timeZone = TimeZone(secondsFromGMT: secondsFromGMT)
+        let string = usersIntendedDateFormatter.string(from: date)
+        print(string)
+        
+        return string
     }
 }
