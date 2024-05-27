@@ -26,9 +26,6 @@ public struct ZodiacQuery {
         let usersIntendedDateFormatter = DateFormatter()
         usersIntendedDateFormatter.dateFormat = "MM-dd-yyyy"
         usersIntendedDateFormatter.timeZone = TimeZone(secondsFromGMT: secondsFromGMT)
-        let string = usersIntendedDateFormatter.string(from: date)
-        print(string)
-        
-        return string
+        return usersIntendedDateFormatter.string(from: date)
     }
 }
