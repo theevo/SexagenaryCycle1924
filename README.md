@@ -233,8 +233,4 @@ Utilizing the JSON of the source, this package will have a method that can gener
 
 If you feel I'm not living up to the mission of this project or you have other queries, please [contact me](https://iosdev.space/@theevo).
 
-Theo Vora
-
-[Mastodon](https://iosdev.space/@theevo)
-
-[LinkedIn](https://www.linkedin.com/in/theovora/)
+Theo Vora: [Mastodon](https://iosdev.space/@theevo)
